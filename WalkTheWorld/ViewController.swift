@@ -8,6 +8,8 @@
 
 import UIKit
 import HealthKit
+import AVKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -93,6 +95,33 @@ class ViewController: UIViewController {
             print(self.steps)
         }
         
+    }
+    
+    
+    @IBAction func didClickMovie(sender: AnyObject) {
+        do {
+            try playVideo("NYC")
+        } catch AppError.InvalidResource(let name, let type) {
+            debugPrint("Could not find resource \(name).\(type)")
+        } catch {
+            debugPrint("Generic error")
+        }
+    }
+    
+    private func playVideo(name : String) throws {
+        guard let path = NSBundle.mainBundle().pathForResource(name, ofType:"mp4") else {
+            throw AppError.InvalidResource(name, "mp4")
+        }
+        let player = AVPlayer(URL: NSURL(fileURLWithPath: path))
+        let playerController = AVPlayerViewController()
+        playerController.player = player
+        self.presentViewController(playerController, animated: true) {
+            player.play()
+        }
+    }
+    
+    enum AppError : ErrorType {
+        case InvalidResource(String, String)
     }
     
     override func didReceiveMemoryWarning() {
