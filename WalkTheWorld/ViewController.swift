@@ -108,6 +108,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     private func playVideo(name : String) throws {
         guard let path = NSBundle.mainBundle().pathForResource(name, ofType:"mp4") else {
             throw AppError.InvalidResource(name, "mp4")
