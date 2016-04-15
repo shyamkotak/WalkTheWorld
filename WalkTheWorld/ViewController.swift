@@ -25,11 +25,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonImage4: UIButton!
     @IBOutlet weak var buttonImage5: UIButton!
     
-    
-    
+    @IBOutlet weak var stepProgress1: StepProgress!
+    @IBOutlet weak var stepProgress2: StepProgress!
+    @IBOutlet weak var stepProgress3: StepProgress!
+    @IBOutlet weak var stepProgress4: StepProgress!
+    @IBOutlet weak var stepProgress5: StepProgress!
+
+    var totalSteps : [Double] = [1000, 2000, 3000, 4000, 5000]
+    var currentSteps: Double = 750
+    var stepPercents : [Double] = [0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setStepTotals()
+        
+        
+        view.backgroundColor = UIColor(red: 52.0/255.0, green: 170.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+        print("step progress 1 height \(stepProgress1.frame.height) and width \(stepProgress1.frame.width)")
+        
+        
+        
+        for index in 0 ... (totalSteps.count - 1) {
+            var stepPercent = currentSteps / totalSteps[index]
+            if stepPercent > 1.0 {
+                stepPercent = 1.0
+            }
+            stepPercents[index] = stepPercent
+        }
+        animateProgressCircles()
         
         self.label.text = String(self.steps)
         
@@ -106,6 +130,25 @@ class ViewController: UIViewController {
             print(self.steps)
         }
         
+
+        
+    }
+    
+    func setStepTotals() {
+        stepProgress1.setTotalSteps(totalSteps[0])
+        stepProgress2.setTotalSteps(totalSteps[1])
+        stepProgress3.setTotalSteps(totalSteps[2])
+        stepProgress4.setTotalSteps(totalSteps[3])
+        stepProgress5.setTotalSteps(totalSteps[4])
+    }
+    
+    func animateProgressCircles() {
+        stepProgress1.animateProgressView(stepPercents[0])
+        stepProgress2.animateProgressView(stepPercents[1])
+        stepProgress3.animateProgressView(stepPercents[2])
+        stepProgress4.animateProgressView(stepPercents[3])
+        stepProgress5.animateProgressView(stepPercents[4])
+
     }
     
     
@@ -196,6 +239,10 @@ class ViewController: UIViewController {
     enum AppError : ErrorType {
         case InvalidResource(String, String)
     }
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -31,24 +32,20 @@
                                     <action selector="didClickMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UBs-aU-5fc"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHo-nL-42h" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="463" width="101" height="92"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHo-nL-42h" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="33" y="463" width="67" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmf-Zv-wGO" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="363" width="101" height="92"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmf-Zv-wGO" userLabel="Step Progress4" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="29" y="363" width="71" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-fQ-tIE" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="263" width="101" height="92"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-fQ-tIE" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="33" y="263" width="67" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ht-9r-FDf" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="163" width="101" height="92"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-Pz-RGY" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="66" width="101" height="92"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ht-9r-FDf" userLabel="Step Progress2" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="29" y="163" width="71" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-UP-BX9" userLabel="Button1">
@@ -86,34 +83,49 @@
                                     <action selector="didClickButton5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcJ-fm-imy"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-Pz-RGY" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="29" y="66" width="71" height="92"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YfS-Y1-Rg6" firstAttribute="leading" secondItem="DAY-fQ-tIE" secondAttribute="trailing" constant="32" id="161-ji-xMb"/>
                             <constraint firstItem="vHo-nL-42h" firstAttribute="width" secondItem="Xmf-Zv-wGO" secondAttribute="width" id="3mk-sZ-yxj"/>
+                            <constraint firstItem="Xmf-Zv-wGO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="71:600" id="6JE-Jh-a4r"/>
                             <constraint firstItem="vKc-UP-BX9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="6yG-BF-H7h"/>
+                            <constraint firstItem="hPh-Pz-RGY" firstAttribute="width" secondItem="vKc-UP-BX9" secondAttribute="height" multiplier="71:92" id="7SV-ZP-7qg"/>
                             <constraint firstItem="pDk-Lm-Fdq" firstAttribute="leading" secondItem="Xmf-Zv-wGO" secondAttribute="trailing" constant="32" id="7x6-fQ-gxC"/>
                             <constraint firstItem="pDk-Lm-Fdq" firstAttribute="height" secondItem="Xmf-Zv-wGO" secondAttribute="height" id="9qv-jt-OqN"/>
                             <constraint firstItem="YfS-Y1-Rg6" firstAttribute="height" secondItem="aDt-6C-y7y" secondAttribute="height" id="Bdj-ao-njo"/>
+                            <constraint firstItem="9Ht-9r-FDf" firstAttribute="top" secondItem="hPh-Pz-RGY" secondAttribute="bottom" constant="5" id="CKE-oV-CCX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aDt-6C-y7y" secondAttribute="trailing" id="FWT-eO-uKT"/>
                             <constraint firstItem="tUM-ih-tpa" firstAttribute="height" secondItem="pDk-Lm-Fdq" secondAttribute="height" id="G5T-qE-Bew"/>
                             <constraint firstItem="YfS-Y1-Rg6" firstAttribute="width" secondItem="aDt-6C-y7y" secondAttribute="width" id="GOj-zh-7c1"/>
+                            <constraint firstItem="hPh-Pz-RGY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="46" id="J0E-r1-aob"/>
                             <constraint firstItem="aDt-6C-y7y" firstAttribute="height" secondItem="9Ht-9r-FDf" secondAttribute="height" id="K4o-UI-jnV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YfS-Y1-Rg6" secondAttribute="trailing" id="LIX-gz-ddz"/>
+                            <constraint firstItem="Xmf-Zv-wGO" firstAttribute="height" secondItem="DAY-fQ-tIE" secondAttribute="height" id="LOT-GZ-AdX"/>
+                            <constraint firstItem="Xmf-Zv-wGO" firstAttribute="top" secondItem="DAY-fQ-tIE" secondAttribute="bottom" constant="8" id="Lrf-qy-SoT"/>
                             <constraint firstItem="Xmf-Zv-wGO" firstAttribute="width" secondItem="DAY-fQ-tIE" secondAttribute="width" id="MGl-mS-z7Y"/>
                             <constraint firstItem="YfS-Y1-Rg6" firstAttribute="top" secondItem="aDt-6C-y7y" secondAttribute="bottom" constant="8" id="NJ1-hx-WvO"/>
                             <constraint firstItem="tUM-ih-tpa" firstAttribute="height" secondItem="vHo-nL-42h" secondAttribute="height" id="OLb-0A-cp7"/>
+                            <constraint firstItem="DAY-fQ-tIE" firstAttribute="height" secondItem="9Ht-9r-FDf" secondAttribute="height" id="OPL-sI-AhW"/>
+                            <constraint firstItem="DAY-fQ-tIE" firstAttribute="top" secondItem="9Ht-9r-FDf" secondAttribute="bottom" constant="8" id="PLE-CA-gUw"/>
                             <constraint firstItem="pDk-Lm-Fdq" firstAttribute="width" secondItem="YfS-Y1-Rg6" secondAttribute="width" id="QZk-jK-g4k"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xmf-Zv-wGO" secondAttribute="leading" id="RWA-T7-p2X"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pDk-Lm-Fdq" secondAttribute="trailing" id="RdU-H4-cfw"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tUM-ih-tpa" secondAttribute="bottom" constant="45" id="STI-NZ-tQp"/>
                             <constraint firstItem="DAY-fQ-tIE" firstAttribute="width" secondItem="9Ht-9r-FDf" secondAttribute="width" id="SXa-uJ-3v9"/>
                             <constraint firstItem="YfS-Y1-Rg6" firstAttribute="height" secondItem="DAY-fQ-tIE" secondAttribute="height" id="Uye-ns-ZPV"/>
+                            <constraint firstItem="Xmf-Zv-wGO" firstAttribute="height" secondItem="vHo-nL-42h" secondAttribute="height" id="WBa-xV-fmo"/>
                             <constraint firstItem="aDt-6C-y7y" firstAttribute="top" secondItem="vKc-UP-BX9" secondAttribute="bottom" constant="8" id="Z1j-Gq-eGE"/>
                             <constraint firstItem="tUM-ih-tpa" firstAttribute="width" secondItem="pDk-Lm-Fdq" secondAttribute="width" id="ZM9-Tj-E5M"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hPh-Pz-RGY" secondAttribute="leading" id="Zrv-9F-m40"/>
+                            <constraint firstItem="vHo-nL-42h" firstAttribute="top" secondItem="Xmf-Zv-wGO" secondAttribute="bottom" constant="8" id="fg8-dW-ovK"/>
                             <constraint firstItem="aDt-6C-y7y" firstAttribute="width" secondItem="vKc-UP-BX9" secondAttribute="width" id="fhU-hH-pKh"/>
                             <constraint firstItem="tUM-ih-tpa" firstAttribute="top" secondItem="pDk-Lm-Fdq" secondAttribute="bottom" constant="8" id="gKc-ZI-aAu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vHo-nL-42h" secondAttribute="bottom" constant="45" id="gxG-fA-3US"/>
                             <constraint firstAttribute="leadingMargin" secondItem="DAY-fQ-tIE" secondAttribute="leading" id="jgI-g9-NB1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="vHo-nL-42h" secondAttribute="leading" id="lCT-ff-ffR"/>
                             <constraint firstItem="pDk-Lm-Fdq" firstAttribute="height" secondItem="YfS-Y1-Rg6" secondAttribute="height" id="lVe-7T-xzb"/>
@@ -123,11 +135,18 @@
                             <constraint firstItem="9Ht-9r-FDf" firstAttribute="width" secondItem="hPh-Pz-RGY" secondAttribute="width" id="s4u-OE-wwo"/>
                             <constraint firstItem="aDt-6C-y7y" firstAttribute="height" secondItem="vKc-UP-BX9" secondAttribute="height" id="u6V-tM-6BC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tUM-ih-tpa" secondAttribute="trailing" id="vqX-Ue-bwW"/>
+                            <constraint firstItem="9Ht-9r-FDf" firstAttribute="height" secondItem="hPh-Pz-RGY" secondAttribute="height" id="wBh-Qn-09Y"/>
                             <constraint firstItem="tUM-ih-tpa" firstAttribute="leading" secondItem="vHo-nL-42h" secondAttribute="trailing" constant="32" id="wBs-fF-eN0"/>
                             <constraint firstItem="pDk-Lm-Fdq" firstAttribute="top" secondItem="YfS-Y1-Rg6" secondAttribute="bottom" constant="8" id="wQ6-ol-q6f"/>
                             <constraint firstItem="vKc-UP-BX9" firstAttribute="leading" secondItem="hPh-Pz-RGY" secondAttribute="trailing" constant="32" id="xSW-wH-kfN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9Ht-9r-FDf" secondAttribute="leading" id="xwl-7O-hel"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7SV-ZP-7qg"/>
+                                <exclude reference="6JE-Jh-a4r"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="buttonImage1" destination="vKc-UP-BX9" id="8jZ-eK-18N"/>
@@ -136,6 +155,11 @@
                         <outlet property="buttonImage4" destination="pDk-Lm-Fdq" id="NZ3-LV-Tm3"/>
                         <outlet property="buttonImage5" destination="tUM-ih-tpa" id="an8-oS-wd9"/>
                         <outlet property="label" destination="HKm-1U-Djf" id="xqB-1V-aiE"/>
+                        <outlet property="stepProgress1" destination="hPh-Pz-RGY" id="AfM-XQ-c0P"/>
+                        <outlet property="stepProgress2" destination="9Ht-9r-FDf" id="CcC-9k-83k"/>
+                        <outlet property="stepProgress3" destination="DAY-fQ-tIE" id="x0F-PN-pKP"/>
+                        <outlet property="stepProgress4" destination="Xmf-Zv-wGO" id="gyH-wL-VgR"/>
+                        <outlet property="stepProgress5" destination="vHo-nL-42h" id="iqa-Vt-S9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
