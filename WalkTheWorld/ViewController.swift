@@ -15,7 +15,18 @@ class ViewController: UIViewController {
     
     var steps : Int = 0
     var run : Int = 0
+    
     @IBOutlet weak var label: UILabel!
+    
+    
+    @IBOutlet weak var buttonImage1: UIButton!
+    @IBOutlet weak var buttonImage2: UIButton!
+    @IBOutlet weak var buttonImage3: UIButton!
+    @IBOutlet weak var buttonImage4: UIButton!
+    @IBOutlet weak var buttonImage5: UIButton!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +118,67 @@ class ViewController: UIViewController {
             debugPrint("Generic error")
         }
     }
+    
+    
+    
+    @IBAction func didClickButton1(sender: AnyObject) {
+        do {
+            try playVideo("NYC")
+        } catch AppError.InvalidResource(let name, let type) {
+            debugPrint("Could not find resource \(name).\(type)")
+        } catch {
+            debugPrint("Generic error")
+        }
+    }
+    
+    
+    @IBAction func didClickButton2(sender: AnyObject) {
+        do {
+            try playVideo("NYC")
+        } catch AppError.InvalidResource(let name, let type) {
+            debugPrint("Could not find resource \(name).\(type)")
+        } catch {
+            debugPrint("Generic error")
+        }
+    }
+    
+    @IBAction func didClickButton3(sender: AnyObject) {
+        do {
+            try playVideo("NYC")
+        } catch AppError.InvalidResource(let name, let type) {
+            debugPrint("Could not find resource \(name).\(type)")
+        } catch {
+            debugPrint("Generic error")
+        }
+    }
+    
+    
+    @IBAction func didClickButton4(sender: AnyObject) {
+        do {
+            try playVideo("NYC")
+        } catch AppError.InvalidResource(let name, let type) {
+            debugPrint("Could not find resource \(name).\(type)")
+        } catch {
+            debugPrint("Generic error")
+        }
+    }
+    
+    
+    @IBAction func didClickButton5(sender: AnyObject) {
+        do {
+            try playVideo("NYC")
+        } catch AppError.InvalidResource(let name, let type) {
+            debugPrint("Could not find resource \(name).\(type)")
+        } catch {
+            debugPrint("Generic error")
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     
     private func playVideo(name : String) throws {

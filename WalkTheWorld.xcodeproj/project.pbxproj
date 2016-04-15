@@ -15,6 +15,7 @@
 		1C00DEE01CBFF01300E063BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEDE1CBFF01300E063BA /* LaunchScreen.storyboard */; };
 		1C00DEE81CBFF48B00E063BA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C00DEE71CBFF48B00E063BA /* HealthKit.framework */; };
 		1C00DEEB1CBFFBC600E063BA /* NYC.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEEA1CBFFBBD00E063BA /* NYC.mp4 */; };
+		DA30AFF51CC00F6C0013241A /* StepProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30AFF41CC00F6C0013241A /* StepProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		1C00DEE71CBFF48B00E063BA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1C00DEE91CBFF48B00E063BA /* WalkTheWorld.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WalkTheWorld.entitlements; sourceTree = "<group>"; };
 		1C00DEEA1CBFFBBD00E063BA /* NYC.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = NYC.mp4; sourceTree = "<group>"; };
+		DA30AFF41CC00F6C0013241A /* StepProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				1C00DEE11CBFF01300E063BA /* Info.plist */,
 				1C00DEE91CBFF48B00E063BA /* WalkTheWorld.entitlements */,
 				1C00DED91CBFF01300E063BA /* WalkTheWorld.xcdatamodeld */,
+				DA30AFF41CC00F6C0013241A /* StepProgress.swift */,
 			);
 			path = WalkTheWorld;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				1C00DED51CBFF01300E063BA /* ViewController.swift in Sources */,
 				1C00DED31CBFF01300E063BA /* AppDelegate.swift in Sources */,
+				DA30AFF51CC00F6C0013241A /* StepProgress.swift in Sources */,
 				1C00DEDB1CBFF01300E063BA /* WalkTheWorld.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
