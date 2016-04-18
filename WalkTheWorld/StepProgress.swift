@@ -51,7 +51,6 @@ class StepProgress : UIView {
         stepProgressLayer.strokeStart = 0.0
         stepProgressLayer.strokeEnd = 0.0
         
-        
         //gradientMaskLayer.mask = stepProgressLayer
         layer.addSublayer(stepProgressLayer)
     }
