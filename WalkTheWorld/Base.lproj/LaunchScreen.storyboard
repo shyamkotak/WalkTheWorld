@@ -16,12 +16,41 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="07A-Ij-7JQ">
+                                <rect key="frame" x="100" y="71" width="400" height="457"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Walk the World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-0N-Xxd">
+                                <rect key="frame" x="136" y="44" width="328" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Created by Shyam Kotak and Julia Pohlmann" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpO-sR-wNh">
+                                <rect key="frame" x="132" y="549" width="341" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.44172190656565657" green="0.27182978293569859" blue="0.39317664366237731" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="07A-Ij-7JQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3DL-rM-5Za"/>
+                            <constraint firstItem="OVp-0N-Xxd" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="24" id="9qF-gu-TxF"/>
+                            <constraint firstItem="xpO-sR-wNh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OtD-cd-o7g"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="xpO-sR-wNh" secondAttribute="bottom" constant="30" id="Zbh-gc-r6d"/>
+                            <constraint firstItem="xpO-sR-wNh" firstAttribute="top" secondItem="07A-Ij-7JQ" secondAttribute="bottom" constant="21" id="hEn-Z6-a3j"/>
+                            <constraint firstItem="OVp-0N-Xxd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lr9-Vy-Bvb"/>
+                            <constraint firstItem="07A-Ij-7JQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="pzf-mn-BY0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-5" y="285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="720" height="720"/>
+    </resources>
 </document>
