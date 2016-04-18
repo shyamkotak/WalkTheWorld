@@ -25,27 +25,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekb-c8-AC7">
-                                <rect key="frame" x="16" y="28" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didClickMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UBs-aU-5fc"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHo-nL-42h" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="63" y="463" width="67" height="92"/>
+                                <rect key="frame" x="38" y="463" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmf-Zv-wGO" userLabel="Step Progress4" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="59" y="363" width="71" height="92"/>
+                                <rect key="frame" x="38" y="363" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-fQ-tIE" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="63" y="263" width="67" height="92"/>
+                                <rect key="frame" x="38" y="263" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ht-9r-FDf" userLabel="Step Progress2" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="59" y="163" width="71" height="92"/>
+                                <rect key="frame" x="38" y="163" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-UP-BX9" userLabel="Button1">
@@ -84,7 +77,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-Pz-RGY" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="59" y="66" width="71" height="92"/>
+                                <rect key="frame" x="38" y="66" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>

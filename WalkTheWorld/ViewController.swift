@@ -38,24 +38,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setStepTotals()
-        
-        print("button image size  is \(buttonImage1.frame.size)")
-
-        //view.backgroundColor = UIColor(red: 52.0/255.0, green: 170.0/255.0, blue: 220.0/255.0, alpha: 1.0)
-
-
-        for index in 0 ... (totalSteps.count - 1) {
-            var stepPercent = currentSteps / totalSteps[index]
-            if stepPercent > 1.0 {
-                stepPercent = 1.0
-            }
-            stepPercents[index] = stepPercent
-        }
-        animateProgressCircles()
-        
-        self.label.text = String(self.steps)
-        
         let healthStore: HKHealthStore? = {
             if HKHealthStore.isHealthDataAvailable() {
                 return HKHealthStore()
@@ -88,7 +70,8 @@ class ViewController: UIViewController {
                         print("SUCCESS")
                         self.run++;
                         dispatch_async(dispatch_get_main_queue(), {
-                            //self.viewDidLoad()
+                            print("HERE1")
+                            self.viewDidLoad()
                         })
                     } else {
                         print(error!.description)
@@ -114,7 +97,8 @@ class ViewController: UIViewController {
                     self.run = self.run + 1;
                     print("onemoretime")
                     dispatch_async(dispatch_get_main_queue(), {
-                        //self.viewDidLoad()
+                        print("HERE2")
+                        self.viewDidLoad()
                     })
                 }
         }
@@ -127,6 +111,22 @@ class ViewController: UIViewController {
             self.label.text = String(self.steps)
             print("yo")
             print(self.steps)
+            setStepTotals()
+            
+            print("button image size  is \(buttonImage1.frame.size)")
+            print("progress view size is \(stepProgress1.frame.size)")
+            //view.backgroundColor = UIColor(red: 52.0/255.0, green: 170.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+            
+            for index in 0 ... (totalSteps.count - 1) {
+                var stepPercent = currentSteps / totalSteps[index]
+                if stepPercent > 1.0 {
+                    stepPercent = 1.0
+                }
+                stepPercents[index] = stepPercent
+            }
+            animateProgressCircles()
+            
+            self.label.text = String(self.steps)
         }
         
 
@@ -151,15 +151,15 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func didClickMovie(sender: AnyObject) {
-        do {
-            try playVideo("NYC")
-        } catch AppError.InvalidResource(let name, let type) {
-            debugPrint("Could not find resource \(name).\(type)")
-        } catch {
-            debugPrint("Generic error")
-        }
-    }
+//    @IBAction func didClickMovie(sender: AnyObject) {
+//        do {
+//            try playVideo("NYC")
+//        } catch AppError.InvalidResource(let name, let type) {
+//            debugPrint("Could not find resource \(name).\(type)")
+//        } catch {
+//            debugPrint("Generic error")
+//        }
+//    }
     
     
     
