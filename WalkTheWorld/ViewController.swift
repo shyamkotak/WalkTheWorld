@@ -40,12 +40,11 @@ class ViewController: UIViewController {
         
         setStepTotals()
         
-        
-        view.backgroundColor = UIColor(red: 52.0/255.0, green: 170.0/255.0, blue: 220.0/255.0, alpha: 1.0)
-        print("step progress 1 height \(stepProgress1.frame.height) and width \(stepProgress1.frame.width)")
-        
-        
-        
+        print("button image size  is \(buttonImage1.frame.size)")
+
+        //view.backgroundColor = UIColor(red: 52.0/255.0, green: 170.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+
+
         for index in 0 ... (totalSteps.count - 1) {
             var stepPercent = currentSteps / totalSteps[index]
             if stepPercent > 1.0 {
@@ -89,7 +88,7 @@ class ViewController: UIViewController {
                         print("SUCCESS")
                         self.run++;
                         dispatch_async(dispatch_get_main_queue(), {
-                            self.viewDidLoad()
+                            //self.viewDidLoad()
                         })
                     } else {
                         print(error!.description)
@@ -115,7 +114,7 @@ class ViewController: UIViewController {
                     self.run = self.run + 1;
                     print("onemoretime")
                     dispatch_async(dispatch_get_main_queue(), {
-                        self.viewDidLoad()
+                        //self.viewDidLoad()
                     })
                 }
         }

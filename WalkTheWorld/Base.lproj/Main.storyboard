@@ -33,58 +33,58 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHo-nL-42h" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="33" y="463" width="67" height="92"/>
+                                <rect key="frame" x="63" y="463" width="67" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmf-Zv-wGO" userLabel="Step Progress4" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="29" y="363" width="71" height="92"/>
+                                <rect key="frame" x="59" y="363" width="71" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-fQ-tIE" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="33" y="263" width="67" height="92"/>
+                                <rect key="frame" x="63" y="263" width="67" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ht-9r-FDf" userLabel="Step Progress2" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="29" y="163" width="71" height="92"/>
+                                <rect key="frame" x="59" y="163" width="71" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-UP-BX9" userLabel="Button1">
-                                <rect key="frame" x="153" y="63" width="427" height="92"/>
+                                <rect key="frame" x="179" y="63" width="401" height="92"/>
                                 <state key="normal" backgroundImage="Button_Mountains"/>
                                 <connections>
                                     <action selector="didClickButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0n-92-vrO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDt-6C-y7y" userLabel="Button2">
-                                <rect key="frame" x="153" y="163" width="427" height="92"/>
+                                <rect key="frame" x="179" y="163" width="401" height="92"/>
                                 <state key="normal" backgroundImage="Button_NewYork"/>
                                 <connections>
                                     <action selector="didClickButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRm-Yr-r1o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-Y1-Rg6" userLabel="Button3">
-                                <rect key="frame" x="153" y="263" width="427" height="92"/>
+                                <rect key="frame" x="179" y="263" width="401" height="92"/>
                                 <state key="normal" backgroundImage="Button_RedRock"/>
                                 <connections>
                                     <action selector="didClickButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1wq-Je-Dqg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-Lm-Fdq" userLabel="Button4">
-                                <rect key="frame" x="153" y="363" width="427" height="92"/>
+                                <rect key="frame" x="179" y="363" width="401" height="92"/>
                                 <state key="normal" backgroundImage="Button_SanFran"/>
                                 <connections>
                                     <action selector="didClickButton4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5eF-MY-02n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUM-ih-tpa" userLabel="Button5">
-                                <rect key="frame" x="153" y="463" width="427" height="92"/>
+                                <rect key="frame" x="179" y="463" width="401" height="92"/>
                                 <state key="normal" backgroundImage="Seattle"/>
                                 <connections>
                                     <action selector="didClickButton5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcJ-fm-imy"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-Pz-RGY" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="29" y="66" width="71" height="92"/>
+                                <rect key="frame" x="59" y="66" width="71" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>

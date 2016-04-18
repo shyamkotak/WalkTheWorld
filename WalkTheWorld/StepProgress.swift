@@ -41,11 +41,10 @@ class StepProgress : UIView {
         let start = CGFloat(M_PI_2)
         let end = CGFloat(M_PI * 2 + M_PI_2)
         let center = CGPointMake(CGRectGetWidth(frame)/2, CGRectGetHeight(frame)/2)
-        
         //make a gradient mask layer
         let gradientMaskLayer = customGradientMask()
-        stepProgressLayer.path = UIBezierPath(arcCenter: center, radius: CGRectGetWidth(frame)/2 - 30.0, startAngle: start, endAngle: end, clockwise: true).CGPath
-        stepProgressLayer.backgroundColor = UIColor.clearColor().CGColor
+        stepProgressLayer.path = UIBezierPath(arcCenter: center, radius: CGRectGetWidth(frame)/2 - 15.0, startAngle: start, endAngle: end, clockwise: true).CGPath
+        stepProgressLayer.backgroundColor = UIColor.greenColor().CGColor
         stepProgressLayer.fillColor = nil
         stepProgressLayer.strokeColor = UIColor.blackColor().CGColor
         stepProgressLayer.lineWidth = 4.0
@@ -71,7 +70,8 @@ class StepProgress : UIView {
     }
     
     func createStepLabel() {
-        stepLabel = UILabel(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(frame), 5.0))
+        //stepLabel = UILabel(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(frame), 5.0))
+        stepLabel = UILabel()
         stepLabel.textColor = .blackColor()
         stepLabel.textAlignment = .Center
         stepLabel.text = "\(totalSteps) Steps"
