@@ -49,18 +49,7 @@ class ViewController: UIViewController {
         let stepsCount = HKQuantityType.quantityTypeForIdentifier(
             HKQuantityTypeIdentifierStepCount)
         
-        //let dataTypesToWrite = NSSet(object: stepsCount!)
         let dataTypesToRead = NSSet(object: stepsCount!)
-        
-        //        healthStore?.requestAuthorizationToShareTypes(dataTypesToWrite as? Set<HKSampleType>,
-        //            readTypes: dataTypesToRead as? Set<HKObjectType>,
-        //            completion: { [unowned self] (success, error) in
-        //                if success {
-        //                    print("SUCCESS")
-        //                } else {
-        //                    print(error!.description)
-        //                }
-        //            })
         
         if (run == 0) {
             healthStore?.requestAuthorizationToShareTypes(nil,
@@ -88,14 +77,12 @@ class ViewController: UIViewController {
             sortDescriptors: nil)
             { [unowned self] (query, results, error) in
                 if let results = results as? [HKQuantitySample] {
-                    print("here")
                     for result in results as [HKQuantitySample] {
                         counter = counter + Int(result.quantity.doubleValueForUnit(HKUnit.countUnit()))
                         print(counter)
                     }
                     self.steps = counter
                     self.run = self.run + 1;
-                    print("onemoretime")
                     dispatch_async(dispatch_get_main_queue(), {
                         print("HERE2")
                         self.viewDidLoad()
@@ -108,9 +95,6 @@ class ViewController: UIViewController {
             healthStore?.executeQuery(stepsSampleQuery)
         }
         if (run == 2){
-            self.label.text = String(self.steps)
-            print("yo")
-            print(self.steps)
             setStepTotals()
             
             print("button image size  is \(buttonImage1.frame.size)")
@@ -125,12 +109,8 @@ class ViewController: UIViewController {
                 stepPercents[index] = stepPercent
             }
             animateProgressCircles()
-            
             self.label.text = String(self.steps)
         }
-        
-
-        
     }
     
     func setStepTotals() {
@@ -147,21 +127,7 @@ class ViewController: UIViewController {
         stepProgress3.animateProgressView(stepPercents[2])
         stepProgress4.animateProgressView(stepPercents[3])
         stepProgress5.animateProgressView(stepPercents[4])
-
     }
-    
-    
-//    @IBAction func didClickMovie(sender: AnyObject) {
-//        do {
-//            try playVideo("NYC")
-//        } catch AppError.InvalidResource(let name, let type) {
-//            debugPrint("Could not find resource \(name).\(type)")
-//        } catch {
-//            debugPrint("Generic error")
-//        }
-//    }
-    
-    
     
     @IBAction func didClickButton1(sender: AnyObject) {
         do {
@@ -172,7 +138,6 @@ class ViewController: UIViewController {
             debugPrint("Generic error")
         }
     }
-    
     
     @IBAction func didClickButton2(sender: AnyObject) {
         do {
@@ -194,7 +159,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func didClickButton4(sender: AnyObject) {
         do {
             try playVideo("NYC")
@@ -205,7 +169,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func didClickButton5(sender: AnyObject) {
         do {
             try playVideo("NYC")
@@ -215,13 +178,6 @@ class ViewController: UIViewController {
             debugPrint("Generic error")
         }
     }
-    
-    
-    
-    
-    
-    
-    
     
     private func playVideo(name : String) throws {
         guard let path = NSBundle.mainBundle().pathForResource(name, ofType:"mp4") else {
@@ -239,14 +195,9 @@ class ViewController: UIViewController {
         case InvalidResource(String, String)
     }
     
-    
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 }
