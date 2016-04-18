@@ -13,11 +13,9 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    var steps : Int = 0
     var run : Int = 0
     
     @IBOutlet weak var label: UILabel!
-    
     
     @IBOutlet weak var buttonImage1: UIButton!
     @IBOutlet weak var buttonImage2: UIButton!
@@ -31,12 +29,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var stepProgress4: StepProgress!
     @IBOutlet weak var stepProgress5: StepProgress!
 
-    var totalSteps : [Double] = [1000, 2000, 3000, 4000, 5000]
-    var currentSteps: Double = 750
+    var totalSteps : [Double] = [10000, 8000, 6000, 4000, 2000]
+    var places : [String] = ["Mountains_Water", "NYC", "MultipleLandscapes", "GoldenGateBridge", "CNTower"]
+    var currentSteps: Double = 0
     var stepPercents : [Double] = [0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //buttonImage1.enabled = false
+        //buttonImage2.enabled = false
+        //buttonImage3.enabled = false
+        //buttonImage4.enabled = false
+        //buttonImage5.enabled = false
         
         let healthStore: HKHealthStore? = {
             if HKHealthStore.isHealthDataAvailable() {
@@ -59,7 +64,6 @@ class ViewController: UIViewController {
                         print("SUCCESS")
                         self.run++;
                         dispatch_async(dispatch_get_main_queue(), {
-                            print("HERE1")
                             self.viewDidLoad()
                         })
                     } else {
@@ -71,8 +75,16 @@ class ViewController: UIViewController {
         
         var counter : Int = 0;
         
+        let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(
+            .Hour,
+            value: -24,
+            toDate: NSDate(),
+            options: [])
+        
+        let predicate = HKQuery.predicateForSamplesWithStartDate(yesterday, endDate: NSDate(), options: .None)
+        
         let stepsSampleQuery = HKSampleQuery(sampleType: stepsCount!,
-            predicate: nil,
+            predicate: predicate,
             limit: 100,
             sortDescriptors: nil)
             { [unowned self] (query, results, error) in
@@ -81,7 +93,7 @@ class ViewController: UIViewController {
                         counter = counter + Int(result.quantity.doubleValueForUnit(HKUnit.countUnit()))
                         print(counter)
                     }
-                    self.steps = counter
+                    self.currentSteps = Double(counter);
                     self.run = self.run + 1;
                     dispatch_async(dispatch_get_main_queue(), {
                         print("HERE2")
@@ -105,11 +117,12 @@ class ViewController: UIViewController {
                 var stepPercent = currentSteps / totalSteps[index]
                 if stepPercent > 1.0 {
                     stepPercent = 1.0
+                    enableButton(index+1)
                 }
                 stepPercents[index] = stepPercent
             }
             animateProgressCircles()
-            self.label.text = String(self.steps)
+            self.label.text = String(self.currentSteps)
         }
     }
     
@@ -129,9 +142,26 @@ class ViewController: UIViewController {
         stepProgress5.animateProgressView(stepPercents[4])
     }
     
+    func enableButton(buttonNum : Int) {
+        switch buttonNum {
+        case 1:
+            buttonImage1.enabled = true
+        case 2:
+            buttonImage2.enabled = true
+        case 3:
+            buttonImage3.enabled = true
+        case 4:
+            buttonImage4.enabled = true
+        case 5:
+            buttonImage5.enabled = true
+        default:
+            print("ERROR: number not valid")
+        }
+    }
+    
     @IBAction func didClickButton1(sender: AnyObject) {
         do {
-            try playVideo("NYC")
+            try playVideo(places[0])
         } catch AppError.InvalidResource(let name, let type) {
             debugPrint("Could not find resource \(name).\(type)")
         } catch {
@@ -141,7 +171,7 @@ class ViewController: UIViewController {
     
     @IBAction func didClickButton2(sender: AnyObject) {
         do {
-            try playVideo("NYC")
+            try playVideo(places[1])
         } catch AppError.InvalidResource(let name, let type) {
             debugPrint("Could not find resource \(name).\(type)")
         } catch {
@@ -151,7 +181,7 @@ class ViewController: UIViewController {
     
     @IBAction func didClickButton3(sender: AnyObject) {
         do {
-            try playVideo("NYC")
+            try playVideo(places[2])
         } catch AppError.InvalidResource(let name, let type) {
             debugPrint("Could not find resource \(name).\(type)")
         } catch {
@@ -161,7 +191,7 @@ class ViewController: UIViewController {
     
     @IBAction func didClickButton4(sender: AnyObject) {
         do {
-            try playVideo("NYC")
+            try playVideo(places[3])
         } catch AppError.InvalidResource(let name, let type) {
             debugPrint("Could not find resource \(name).\(type)")
         } catch {
@@ -171,7 +201,7 @@ class ViewController: UIViewController {
     
     @IBAction func didClickButton5(sender: AnyObject) {
         do {
-            try playVideo("NYC")
+            try playVideo(places[4])
         } catch AppError.InvalidResource(let name, let type) {
             debugPrint("Could not find resource \(name).\(type)")
         } catch {

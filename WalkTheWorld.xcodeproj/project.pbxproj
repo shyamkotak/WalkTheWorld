@@ -15,6 +15,10 @@
 		1C00DEE01CBFF01300E063BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEDE1CBFF01300E063BA /* LaunchScreen.storyboard */; };
 		1C00DEE81CBFF48B00E063BA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C00DEE71CBFF48B00E063BA /* HealthKit.framework */; };
 		1C00DEEB1CBFFBC600E063BA /* NYC.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEEA1CBFFBBD00E063BA /* NYC.mp4 */; };
+		1C00DEF01CC5526A00E063BA /* CNTower.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEEC1CC551EB00E063BA /* CNTower.mp4 */; };
+		1C00DEF11CC5526A00E063BA /* GoldenGateBridge.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEED1CC551EB00E063BA /* GoldenGateBridge.mp4 */; };
+		1C00DEF21CC5526A00E063BA /* Mountains_Water.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEEE1CC551EB00E063BA /* Mountains_Water.mp4 */; };
+		1C00DEF31CC5526A00E063BA /* MultipleLandscapes.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEEF1CC551EB00E063BA /* MultipleLandscapes.mp4 */; };
 		DA30AFF51CC00F6C0013241A /* StepProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30AFF41CC00F6C0013241A /* StepProgress.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +34,10 @@
 		1C00DEE71CBFF48B00E063BA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1C00DEE91CBFF48B00E063BA /* WalkTheWorld.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WalkTheWorld.entitlements; sourceTree = "<group>"; };
 		1C00DEEA1CBFFBBD00E063BA /* NYC.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = NYC.mp4; sourceTree = "<group>"; };
+		1C00DEEC1CC551EB00E063BA /* CNTower.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = CNTower.mp4; sourceTree = "<group>"; };
+		1C00DEED1CC551EB00E063BA /* GoldenGateBridge.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoldenGateBridge.mp4; sourceTree = "<group>"; };
+		1C00DEEE1CC551EB00E063BA /* Mountains_Water.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mountains_Water.mp4; sourceTree = "<group>"; };
+		1C00DEEF1CC551EB00E063BA /* MultipleLandscapes.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MultipleLandscapes.mp4; sourceTree = "<group>"; };
 		DA30AFF41CC00F6C0013241A /* StepProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +78,10 @@
 				1C00DED61CBFF01300E063BA /* Main.storyboard */,
 				1C00DEDC1CBFF01300E063BA /* Assets.xcassets */,
 				1C00DEEA1CBFFBBD00E063BA /* NYC.mp4 */,
+				1C00DEEC1CC551EB00E063BA /* CNTower.mp4 */,
+				1C00DEED1CC551EB00E063BA /* GoldenGateBridge.mp4 */,
+				1C00DEEE1CC551EB00E063BA /* Mountains_Water.mp4 */,
+				1C00DEEF1CC551EB00E063BA /* MultipleLandscapes.mp4 */,
 				1C00DEDE1CBFF01300E063BA /* LaunchScreen.storyboard */,
 				1C00DEE11CBFF01300E063BA /* Info.plist */,
 				1C00DEE91CBFF48B00E063BA /* WalkTheWorld.entitlements */,
@@ -143,6 +155,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C00DEF01CC5526A00E063BA /* CNTower.mp4 in Resources */,
+				1C00DEF11CC5526A00E063BA /* GoldenGateBridge.mp4 in Resources */,
+				1C00DEF21CC5526A00E063BA /* Mountains_Water.mp4 in Resources */,
+				1C00DEF31CC5526A00E063BA /* MultipleLandscapes.mp4 in Resources */,
 				1C00DEEB1CBFFBC600E063BA /* NYC.mp4 in Resources */,
 				1C00DEE01CBFF01300E063BA /* LaunchScreen.storyboard in Resources */,
 				1C00DEDD1CBFF01300E063BA /* Assets.xcassets in Resources */,

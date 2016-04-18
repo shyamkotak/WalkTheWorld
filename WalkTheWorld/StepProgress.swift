@@ -42,32 +42,32 @@ class StepProgress : UIView {
         let end = CGFloat(M_PI * 2 + M_PI_2)
         let center = CGPointMake(CGRectGetWidth(frame)/2, CGRectGetHeight(frame)/2)
         //make a gradient mask layer
-        let gradientMaskLayer = customGradientMask()
+        //let gradientMaskLayer = customGradientMask()
         stepProgressLayer.path = UIBezierPath(arcCenter: center, radius: CGRectGetWidth(frame)/2 - 15.0, startAngle: start, endAngle: end, clockwise: true).CGPath
         stepProgressLayer.backgroundColor = UIColor.greenColor().CGColor
         stepProgressLayer.fillColor = nil
-        stepProgressLayer.strokeColor = UIColor.blackColor().CGColor
+        stepProgressLayer.strokeColor = UIColor.orangeColor().CGColor
         stepProgressLayer.lineWidth = 4.0
         stepProgressLayer.strokeStart = 0.0
         stepProgressLayer.strokeEnd = 0.0
         
         
-        gradientMaskLayer.mask = stepProgressLayer
-        layer.addSublayer(gradientMaskLayer)
+        //gradientMaskLayer.mask = stepProgressLayer
+        layer.addSublayer(stepProgressLayer)
     }
     
-    func customGradientMask() -> CAGradientLayer {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.locations = [0.0, 1.0]
-        
-        let topColor: AnyObject = UIColor(red: 255.0/255.0, green: 213.0/255.0, blue: 63.0/255.0, alpha: 1.0).CGColor
-        let bottomColor: AnyObject = UIColor(red: 255.0/255.0, green: 198.0/255.0, blue: 5.0/255.0, alpha: 1.0).CGColor
-        let colorArray: [AnyObject] = [topColor, bottomColor]
-        gradientLayer.colors = colorArray
-        
-        return gradientLayer
-    }
+//    func customGradientMask() -> CAGradientLayer {
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = bounds
+//        gradientLayer.locations = [0.0, 1.0]
+//        
+//        let topColor: AnyObject = UIColor(red: 255.0/255.0, green: 213.0/255.0, blue: 63.0/255.0, alpha: 1.0).CGColor
+//        let bottomColor: AnyObject = UIColor(red: 255.0/255.0, green: 198.0/255.0, blue: 5.0/255.0, alpha: 1.0).CGColor
+//        let colorArray: [AnyObject] = [topColor, bottomColor]
+//        gradientLayer.colors = colorArray
+//        
+//        return gradientLayer
+//    }
     
     func createStepLabel() {
         //stepLabel = UILabel(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(frame), 5.0))
