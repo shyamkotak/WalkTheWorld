@@ -148,8 +148,8 @@ class ViewController: UIViewController {
         
         // Don't forget to execute the Query!
         if(run == 1) {
-            healthStore?.executeQuery(stepsSampleQuery)
             healthStore?.executeQuery(query)
+            healthStore?.executeQuery(stepsSampleQuery)
         }
         if (run == 2){
             setStepTotals()
