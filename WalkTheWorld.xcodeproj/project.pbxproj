@@ -19,8 +19,40 @@
 		1C00DEF11CC5526A00E063BA /* GoldenGateBridge.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEED1CC551EB00E063BA /* GoldenGateBridge.mp4 */; };
 		1C00DEF21CC5526A00E063BA /* Mountains_Water.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEEE1CC551EB00E063BA /* Mountains_Water.mp4 */; };
 		1C00DEF31CC5526A00E063BA /* MultipleLandscapes.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEEF1CC551EB00E063BA /* MultipleLandscapes.mp4 */; };
+		1C00DEF51CD139D700E063BA /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00DEF41CD139D700E063BA /* ChartViewController.swift */; };
 		DA30AFF51CC00F6C0013241A /* StepProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30AFF41CC00F6C0013241A /* StepProgress.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C00DF241CD13E5600E063BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		1C00DF261CD13E5600E063BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		1C00DF281CD13E5600E063BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
+			remoteInfo = "Charts-OSX";
+		};
+		1C00DF2A1CD13E5600E063BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1C00DECF1CBFF01300E063BA /* WalkTheWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkTheWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +70,8 @@
 		1C00DEED1CC551EB00E063BA /* GoldenGateBridge.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = GoldenGateBridge.mp4; sourceTree = "<group>"; };
 		1C00DEEE1CC551EB00E063BA /* Mountains_Water.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mountains_Water.mp4; sourceTree = "<group>"; };
 		1C00DEEF1CC551EB00E063BA /* MultipleLandscapes.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MultipleLandscapes.mp4; sourceTree = "<group>"; };
+		1C00DEF41CD139D700E063BA /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		DA30AFF41CC00F6C0013241A /* StepProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +109,7 @@
 			children = (
 				1C00DED21CBFF01300E063BA /* AppDelegate.swift */,
 				1C00DED41CBFF01300E063BA /* ViewController.swift */,
+				1C00DEF41CD139D700E063BA /* ChartViewController.swift */,
 				1C00DED61CBFF01300E063BA /* Main.storyboard */,
 				1C00DEDC1CBFF01300E063BA /* Assets.xcassets */,
 				1C00DEEA1CBFFBBD00E063BA /* NYC.mp4 */,
@@ -86,9 +121,21 @@
 				1C00DEE11CBFF01300E063BA /* Info.plist */,
 				1C00DEE91CBFF48B00E063BA /* WalkTheWorld.entitlements */,
 				1C00DED91CBFF01300E063BA /* WalkTheWorld.xcdatamodeld */,
+				1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */,
 				DA30AFF41CC00F6C0013241A /* StepProgress.swift */,
 			);
 			path = WalkTheWorld;
+			sourceTree = "<group>";
+		};
+		1C00DF1E1CD13E5600E063BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C00DF251CD13E5600E063BA /* Charts.framework */,
+				1C00DF271CD13E5600E063BA /* Charts.framework */,
+				1C00DF291CD13E5600E063BA /* Charts.framework */,
+				1C00DF2B1CD13E5600E063BA /* ChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,12 +190,49 @@
 			mainGroup = 1C00DEC61CBFF01300E063BA;
 			productRefGroup = 1C00DED01CBFF01300E063BA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1C00DF1E1CD13E5600E063BA /* Products */;
+					ProjectRef = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1C00DECE1CBFF01300E063BA /* WalkTheWorld */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1C00DF251CD13E5600E063BA /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 1C00DF241CD13E5600E063BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1C00DF271CD13E5600E063BA /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 1C00DF261CD13E5600E063BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1C00DF291CD13E5600E063BA /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 1C00DF281CD13E5600E063BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1C00DF2B1CD13E5600E063BA /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 1C00DF2A1CD13E5600E063BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1C00DECD1CBFF01300E063BA /* Resources */ = {
@@ -177,6 +261,7 @@
 				1C00DED31CBFF01300E063BA /* AppDelegate.swift in Sources */,
 				DA30AFF51CC00F6C0013241A /* StepProgress.swift in Sources */,
 				1C00DEDB1CBFF01300E063BA /* WalkTheWorld.xcdatamodeld in Sources */,
+				1C00DEF51CD139D700E063BA /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

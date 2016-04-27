@@ -107,16 +107,4 @@ class StepProgress : UIView {
         //ENABLE BUTTON NEXT TO IT
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
