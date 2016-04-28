@@ -22,38 +22,8 @@
 		1C00DEF51CD139D700E063BA /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00DEF41CD139D700E063BA /* ChartViewController.swift */; };
 		77759189B40C98E5933A3704 /* Pods_WalkTheWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC2420624F45CDD7861BE282 /* Pods_WalkTheWorld.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DA30AFF51CC00F6C0013241A /* StepProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30AFF41CC00F6C0013241A /* StepProgress.swift */; };
+		DAF9E2891CD1CA660043C03D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF9E2881CD1CA660043C03D /* Charts.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1C00DF241CD13E5600E063BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
-			remoteInfo = "Charts-iOS";
-		};
-		1C00DF261CD13E5600E063BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
-			remoteInfo = "Charts-TV";
-		};
-		1C00DF281CD13E5600E063BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
-			remoteInfo = "Charts-OSX";
-		};
-		1C00DF2A1CD13E5600E063BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
-			remoteInfo = ChartsTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		12B5087FB94A932909DB60CA /* Pods-WalkTheWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTheWorld.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTheWorld/Pods-WalkTheWorld.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,9 +43,9 @@
 		1C00DEEE1CC551EB00E063BA /* Mountains_Water.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mountains_Water.mp4; sourceTree = "<group>"; };
 		1C00DEEF1CC551EB00E063BA /* MultipleLandscapes.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MultipleLandscapes.mp4; sourceTree = "<group>"; };
 		1C00DEF41CD139D700E063BA /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
-		1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		AC2420624F45CDD7861BE282 /* Pods_WalkTheWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkTheWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA30AFF41CC00F6C0013241A /* StepProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepProgress.swift; sourceTree = "<group>"; };
+		DAF9E2881CD1CA660043C03D /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Pods-WalkTheWorld/Charts.framework"; sourceTree = "<group>"; };
 		E9910023AA2B963AEF2D35C0 /* Pods-WalkTheWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTheWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTheWorld/Pods-WalkTheWorld.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF9E2891CD1CA660043C03D /* Charts.framework in Frameworks */,
 				1C00DEE81CBFF48B00E063BA /* HealthKit.framework in Frameworks */,
 				77759189B40C98E5933A3704 /* Pods_WalkTheWorld.framework in Frameworks */,
 			);
@@ -95,6 +66,7 @@
 		19DDB85DA52918F9D8FCC3D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAF9E2881CD1CA660043C03D /* Charts.framework */,
 				AC2420624F45CDD7861BE282 /* Pods_WalkTheWorld.framework */,
 			);
 			name = Frameworks;
@@ -136,21 +108,9 @@
 				1C00DEE11CBFF01300E063BA /* Info.plist */,
 				1C00DEE91CBFF48B00E063BA /* WalkTheWorld.entitlements */,
 				1C00DED91CBFF01300E063BA /* WalkTheWorld.xcdatamodeld */,
-				1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */,
 				DA30AFF41CC00F6C0013241A /* StepProgress.swift */,
 			);
 			path = WalkTheWorld;
-			sourceTree = "<group>";
-		};
-		1C00DF1E1CD13E5600E063BA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1C00DF251CD13E5600E063BA /* Charts.framework */,
-				1C00DF271CD13E5600E063BA /* Charts.framework */,
-				1C00DF291CD13E5600E063BA /* Charts.framework */,
-				1C00DF2B1CD13E5600E063BA /* ChartsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		EF7B3E24993A1D38551A2B3A /* Pods */ = {
@@ -217,49 +177,12 @@
 			mainGroup = 1C00DEC61CBFF01300E063BA;
 			productRefGroup = 1C00DED01CBFF01300E063BA /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 1C00DF1E1CD13E5600E063BA /* Products */;
-					ProjectRef = 1C00DF1D1CD13E5600E063BA /* Charts.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1C00DECE1CBFF01300E063BA /* WalkTheWorld */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		1C00DF251CD13E5600E063BA /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = 1C00DF241CD13E5600E063BA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1C00DF271CD13E5600E063BA /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = 1C00DF261CD13E5600E063BA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1C00DF291CD13E5600E063BA /* Charts.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Charts.framework;
-			remoteRef = 1C00DF281CD13E5600E063BA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1C00DF2B1CD13E5600E063BA /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = 1C00DF2A1CD13E5600E063BA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1C00DECD1CBFF01300E063BA /* Resources */ = {
@@ -451,6 +374,10 @@
 				CODE_SIGN_ENTITLEMENTS = WalkTheWorld/WalkTheWorld.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-WalkTheWorld",
+				);
 				INFOPLIST_FILE = WalkTheWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JS.WalkTheWorld;
@@ -467,6 +394,10 @@
 				CODE_SIGN_ENTITLEMENTS = WalkTheWorld/WalkTheWorld.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Pods-WalkTheWorld",
+				);
 				INFOPLIST_FILE = WalkTheWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JS.WalkTheWorld;

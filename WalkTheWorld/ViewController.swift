@@ -10,6 +10,7 @@ import UIKit
 import HealthKit
 import AVKit
 import AVFoundation
+import Charts
 
 class ViewController: UIViewController {
     
