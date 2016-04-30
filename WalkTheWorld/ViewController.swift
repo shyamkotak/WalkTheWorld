@@ -39,19 +39,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set title
+        self.navigationItem.title = "Walk The World"
+        
         //remove back button
         self.navigationItem.hidesBackButton = true
         
+        //set charts button
+        let myBtn: UIButton = UIButton()
+        myBtn.setImage(UIImage(named: "bar-chart-7-xxl.png"), forState: .Normal)
+        myBtn.frame = CGRectMake(0, 0, 25, 25)
+        myBtn.addTarget(self, action: "segueToChart:", forControlEvents: .TouchUpInside)
+
+        //place button in top right
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(customView: myBtn), animated: true)
+
         //grey out all videos
         buttonImage1.enabled = false
         buttonImage2.enabled = false
         buttonImage3.enabled = false
         buttonImage4.enabled = false
         buttonImage5.enabled = false
-        
-        //place button in top right
-        let logButton : UIBarButtonItem = UIBarButtonItem(title: "RightButton", style: UIBarButtonItemStyle.Plain, target: self, action: "segueToChart:")
-        self.navigationItem.rightBarButtonItem = logButton
         
         //make those cool bars
         setStepTotals()

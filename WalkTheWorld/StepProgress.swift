@@ -11,23 +11,14 @@ import UIKit
 class StepProgress : UIView {
     
     private let stepProgressLayer : CAShapeLayer = CAShapeLayer()
-    private var stepLabel : UILabel
-    private var totalSteps : Double
+    private var stepLabel : UILabel = UILabel()
+    private var totalSteps : Double = 0.0
     
     required init?(coder aDecoder: NSCoder) {
-        stepLabel = UILabel()
-        totalSteps = 0
         super.init(coder: aDecoder)
+        self.createStepLabel()
         createStepProgressLayer()
-        createStepLabel()
-    }
-    
-    override init(frame: CGRect) {
-        stepLabel = UILabel()
-        totalSteps = 0
-        super.init(frame: frame)
-        createStepProgressLayer()
-        createStepLabel()
+        self.backgroundColor = UIColor.blackColor()
     }
     
     func setTotalSteps(steps: Double) {
@@ -35,76 +26,66 @@ class StepProgress : UIView {
         stepLabel.text = "\(totalSteps) Steps"
     }
     
-    
     func createStepProgressLayer() {
         //get start angle, end angle, and center point
         let start = CGFloat(M_PI_2)
         let end = CGFloat(M_PI * 2 + M_PI_2)
         let center = CGPointMake(CGRectGetWidth(frame)/2, CGRectGetHeight(frame)/2)
-        //make a gradient mask layer
-        //let gradientMaskLayer = customGradientMask()
-        stepProgressLayer.path = UIBezierPath(arcCenter: center, radius: CGRectGetWidth(frame)/2 - 15.0, startAngle: start, endAngle: end, clockwise: true).CGPath
-        stepProgressLayer.backgroundColor = UIColor.greenColor().CGColor
+        
+        //set Progress Layer's path to be a circle with above req's
+        let bezierPath = UIBezierPath(arcCenter: center, radius: CGRectGetWidth(frame)/2 - 15.0, startAngle: start, endAngle: end, clockwise: true)
+        stepProgressLayer.path = bezierPath.CGPath
+        
+        let customColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
+        
+        //customize the layer
+        stepProgressLayer.strokeColor = customColor.CGColor
         stepProgressLayer.fillColor = nil
-        stepProgressLayer.strokeColor = UIColor.orangeColor().CGColor
         stepProgressLayer.lineWidth = 4.0
+        
+        //set start and end points to 0
         stepProgressLayer.strokeStart = 0.0
         stepProgressLayer.strokeEnd = 0.0
         
-        //gradientMaskLayer.mask = stepProgressLayer
+        //add the layer
         layer.addSublayer(stepProgressLayer)
     }
     
-//    func customGradientMask() -> CAGradientLayer {
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = bounds
-//        gradientLayer.locations = [0.0, 1.0]
-//        
-//        let topColor: AnyObject = UIColor(red: 255.0/255.0, green: 213.0/255.0, blue: 63.0/255.0, alpha: 1.0).CGColor
-//        let bottomColor: AnyObject = UIColor(red: 255.0/255.0, green: 198.0/255.0, blue: 5.0/255.0, alpha: 1.0).CGColor
-//        let colorArray: [AnyObject] = [topColor, bottomColor]
-//        gradientLayer.colors = colorArray
-//        
-//        return gradientLayer
-//    }
-    
     func createStepLabel() {
-        //stepLabel = UILabel(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(frame), 5.0))
+        //create a label that will show the number of steps needed to be acheived
         stepLabel = UILabel()
-        stepLabel.textColor = .blackColor()
-        stepLabel.textAlignment = .Center
-        stepLabel.text = "\(totalSteps) Steps"
-        stepLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 12.0)
+        
+        //customize the label
+        stepLabel.font = UIFont (name: "Helvetica Neue", size: 12)
+        let customColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
+        stepLabel.textColor = customColor
+        
         stepLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stepLabel)
         
+        //add manual constraints in relation to the center
         addConstraint(NSLayoutConstraint(item: self, attribute: .CenterX, relatedBy: .Equal, toItem: stepLabel, attribute: .CenterX, multiplier: 1.0, constant: 0.0))
         addConstraint(NSLayoutConstraint(item: self, attribute: .CenterY, relatedBy: .Equal, toItem: stepLabel, attribute: .CenterY, multiplier: 1.0, constant: 0.0))
     }
     
-    func hideProgressView() {
-        stepProgressLayer.strokeEnd = 0.0
-        stepProgressLayer.removeAllAnimations()
-        //stepLabel.text = "Load content"
-    }
-    
     func animateProgressView(endValue: Double) {
-        stepProgressLayer.strokeEnd = 0.0        
+        //animate the progress view to show the progress so far
+        stepProgressLayer.strokeEnd = 0.0
+        
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = CGFloat(0.0)
         animation.toValue = CGFloat(endValue)
-        animation.duration = 1.0
         animation.delegate = self
-        animation.removedOnCompletion = false
+        
+        //change this if you want a longer/shorter animation
+        animation.duration = 1.0
         animation.additive = true
+        
+        //set the animation to not reset when finished, and to not remove when finished
         animation.fillMode = kCAFillModeForwards
+        animation.removedOnCompletion = false
+        
         stepProgressLayer.addAnimation(animation, forKey: "strokeEnd")
         
     }
-    
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-        //stepLabel.text = "Done"
-        //ENABLE BUTTON NEXT TO IT
-    }
-
 }

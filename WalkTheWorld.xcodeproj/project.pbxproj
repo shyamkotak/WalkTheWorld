@@ -21,6 +21,7 @@
 		1C00DEF31CC5526A00E063BA /* MultipleLandscapes.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1C00DEEF1CC551EB00E063BA /* MultipleLandscapes.mp4 */; };
 		1C00DEF51CD139D700E063BA /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00DEF41CD139D700E063BA /* ChartViewController.swift */; };
 		1CE8C22A1CD52B98004AFC77 /* load_screen_globe_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1CE8C2291CD52B98004AFC77 /* load_screen_globe_gif.gif */; };
+		1CE8C22C1CD555F8004AFC77 /* bar-chart-7-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE8C22B1CD555F8004AFC77 /* bar-chart-7-xxl.png */; };
 		77759189B40C98E5933A3704 /* Pods_WalkTheWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC2420624F45CDD7861BE282 /* Pods_WalkTheWorld.framework */; };
 		DA30AFF51CC00F6C0013241A /* StepProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30AFF41CC00F6C0013241A /* StepProgress.swift */; };
 		DA4B73F71CD3F7BE00AD5DB3 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B73F61CD3F7BE00AD5DB3 /* LoadViewController.swift */; };
@@ -47,6 +48,7 @@
 		1C00DEEF1CC551EB00E063BA /* MultipleLandscapes.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MultipleLandscapes.mp4; sourceTree = "<group>"; };
 		1C00DEF41CD139D700E063BA /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		1CE8C2291CD52B98004AFC77 /* load_screen_globe_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load_screen_globe_gif.gif; sourceTree = "<group>"; };
+		1CE8C22B1CD555F8004AFC77 /* bar-chart-7-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-chart-7-xxl.png"; sourceTree = "<group>"; };
 		AC2420624F45CDD7861BE282 /* Pods_WalkTheWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalkTheWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA30AFF41CC00F6C0013241A /* StepProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepProgress.swift; sourceTree = "<group>"; };
 		DA4B73F61CD3F7BE00AD5DB3 /* LoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1CE8C2291CD52B98004AFC77 /* load_screen_globe_gif.gif */,
+				1CE8C22B1CD555F8004AFC77 /* bar-chart-7-xxl.png */,
 				1C00DED21CBFF01300E063BA /* AppDelegate.swift */,
 				DA4B73F61CD3F7BE00AD5DB3 /* LoadViewController.swift */,
 				1C00DED41CBFF01300E063BA /* ViewController.swift */,
@@ -202,6 +205,7 @@
 				1C00DEF01CC5526A00E063BA /* CNTower.mp4 in Resources */,
 				1C00DEF11CC5526A00E063BA /* GoldenGateBridge.mp4 in Resources */,
 				1C00DEF21CC5526A00E063BA /* Mountains_Water.mp4 in Resources */,
+				1CE8C22C1CD555F8004AFC77 /* bar-chart-7-xxl.png in Resources */,
 				1C00DEF31CC5526A00E063BA /* MultipleLandscapes.mp4 in Resources */,
 				1C00DEEB1CBFFBC600E063BA /* NYC.mp4 in Resources */,
 				1C00DEE01CBFF01300E063BA /* LaunchScreen.storyboard in Resources */,

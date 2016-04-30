@@ -76,13 +76,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKm-1U-Djf">
                                 <rect key="frame" x="20" y="71" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tY6-Js-b1P"/>
+                    <navigationItem key="navigationItem" id="tY6-Js-b1P">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="wX5-Df-ZkY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonImage1" destination="vKc-UP-BX9" id="8jZ-eK-18N"/>
                         <outlet property="buttonImage2" destination="aDt-6C-y7y" id="wQe-Pt-ACg"/>
@@ -111,10 +113,29 @@
                         <viewControllerLayoutGuide type="bottom" id="JbW-bT-5ig"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="31T-Je-n6N">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgr-xh-gvJ" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="wgr-xh-gvJ" secondAttribute="trailing" id="5W9-kk-tGF"/>
+                            <constraint firstItem="wgr-xh-gvJ" firstAttribute="top" secondItem="E9i-Sd-OXX" secondAttribute="bottom" id="Imx-aw-QJd"/>
+                            <constraint firstItem="JbW-bT-5ig" firstAttribute="top" secondItem="wgr-xh-gvJ" secondAttribute="bottom" id="Nqo-h8-Wfj"/>
+                            <constraint firstItem="wgr-xh-gvJ" firstAttribute="leading" secondItem="31T-Je-n6N" secondAttribute="leadingMargin" id="Ork-2E-90r"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="barChartView" destination="wgr-xh-gvJ" id="g5N-jc-vs4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0S-Eg-OZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
