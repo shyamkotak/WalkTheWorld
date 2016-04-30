@@ -13,8 +13,8 @@ class StepProgress : UIView {
     private let stepProgressLayer : CAShapeLayer = CAShapeLayer()
     private var stepLabel : UILabel = UILabel()
     private var totalSteps : Int = 0
-    private let incompleteColor : UIColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
-    private let completeColor : UIColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
+    private let incompleteColor : UIColor = UIColor(red: 178/255, green: 52/255, blue: 32/255, alpha: 1)
+    private let completeColor : UIColor = UIColor(red: 32/255, green: 178/255, blue: 112/255, alpha: 1)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
