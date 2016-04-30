@@ -36,7 +36,6 @@ class ViewController: UIViewController {
     var places : [String] = ["Mountains_Water", "NYC", "MultipleLandscapes", "GoldenGateBridge", "CNTower"]
     var stepsPerDay : [Double] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,121 +53,20 @@ class ViewController: UIViewController {
         let logButton : UIBarButtonItem = UIBarButtonItem(title: "RightButton", style: UIBarButtonItemStyle.Plain, target: self, action: "segueToChart:")
         self.navigationItem.rightBarButtonItem = logButton
         
-//        let healthStore: HKHealthStore? = {
-//            if HKHealthStore.isHealthDataAvailable() {
-//                return HKHealthStore()
-//            } else {
-//                return nil
-//            }
-//        }()
-//        
-//        let stepsCount = HKQuantityType.quantityTypeForIdentifier(
-//            HKQuantityTypeIdentifierStepCount)
-//        
-//        let dataTypesToRead = NSSet(object: stepsCount!)
-//        
-//        if (run == 0) {
-//            healthStore?.requestAuthorizationToShareTypes(nil,
-//                readTypes: dataTypesToRead as? Set<HKObjectType>,
-//                completion: { [unowned self] (success, error) in
-//                    if success {
-//                        print("SUCCESS")
-//                        self.run++;
-//                        dispatch_async(dispatch_get_main_queue(), {
-//                            self.viewDidLoad()
-//                        })
-//                    } else {
-//                        print(error!.description)
-//                    }
-//                })
-//        }
-//        
-//        
-//        var counter : Int = 0;
-//        
-//        //this is to get the today at midnight so
-//        let date = NSDate()
-//        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-//        let todayAtMidnight = cal.startOfDayForDate(date)
-//        
-//        let predicate = HKQuery.predicateForSamplesWithStartDate(todayAtMidnight, endDate: NSDate(), options: .None)
-//        
-//        let stepsSampleQuery = HKSampleQuery(sampleType: stepsCount!,
-//            predicate: predicate,
-//            limit: 100,
-//            sortDescriptors: nil)
-//            { [unowned self] (query, results, error) in
-//                if let results = results as? [HKQuantitySample] {
-//                    for result in results as [HKQuantitySample] {
-//                        counter = counter + Int(result.quantity.doubleValueForUnit(HKUnit.countUnit()))
-//                        print(counter)
-//                    }
-//                    self.currentSteps = Double(counter);
-//                    self.run = self.run + 1;
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                        self.viewDidLoad()
-//                    })
-//                }
-//        }
-//        
-//        //this is now for the second query.
-//        //we want steps taken for last 7 days
-//        let sevenDaysAgo = cal.dateByAddingUnit(.Day, value: -7, toDate: NSDate(), options: [])
-//        let sevenDaysAgoAtMidnight = cal.startOfDayForDate(sevenDaysAgo!)
-//        
-//        let interval = NSDateComponents()
-//        interval.day = 1
-//        
-//        let query = HKStatisticsCollectionQuery(quantityType: stepsCount!,
-//            quantitySamplePredicate: nil,
-//            options: .CumulativeSum,
-//            anchorDate: sevenDaysAgoAtMidnight,
-//            intervalComponents: interval)
-//        
-//        query.initialResultsHandler = {
-//            query, results, error in
-//            
-//            let statsCollection = results
-//            
-//            let endDate = NSDate()
-//            let startDate = sevenDaysAgoAtMidnight
-//            
-//            // Plot the weekly step counts over the past 3 months
-//            statsCollection!.enumerateStatisticsFromDate(startDate, toDate: endDate) {statistics, stop in
-//                
-//                if let quantity = statistics.sumQuantity() {
-//                    //let date = statistics.startDate
-//                    let value = quantity.doubleValueForUnit(HKUnit.countUnit())
-//                    
-//                    // Call a custom method to plot each data point.
-//                    //self.plotWeeklyStepCount(value, forDate: date)
-//                    print("I walked")
-//                    print(value)
-//                    self.stepsPerDay.append(value)
-//                }
-//            }
-//        }
-//        
-//        
-//        // Don't forget to execute the Query!
-//        if(run == 1) {
-//            healthStore?.executeQuery(query)
-//            healthStore?.executeQuery(stepsSampleQuery)
-//        }
-//        if (run == 2){
-            setStepTotals()
-            
-            for index in 0 ... (totalSteps.count - 1) {
-                var stepPercent = currentSteps / totalSteps[index]
-                if stepPercent > 1.0 {
-                    stepPercent = 1.0
-                    enableButton(index+1)
-                }
-                stepPercents[index] = stepPercent
+        //make those cool bars
+        setStepTotals()
+        for index in 0 ... (totalSteps.count - 1) {
+            var stepPercent = currentSteps / totalSteps[index]
+            if stepPercent > 1.0 {
+                stepPercent = 1.0
+                enableButton(index+1)
             }
-            animateProgressCircles()
-            self.label.text = String(self.currentSteps)
-//        }
+            stepPercents[index] = stepPercent
+        }
+        animateProgressCircles()
+        
+        //show the users the # of steps they've taken
+        self.label.text = String(self.currentSteps)
     }
     
     func setStepTotals() {
@@ -204,6 +102,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //load correct movie
     @IBAction func didClickButton1(sender: AnyObject) {
         do {
             try playVideo(places[0])
@@ -214,6 +113,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //load correct movie
     @IBAction func didClickButton2(sender: AnyObject) {
         do {
             try playVideo(places[1])
@@ -224,6 +124,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //load correct movie
     @IBAction func didClickButton3(sender: AnyObject) {
         do {
             try playVideo(places[2])
@@ -234,6 +135,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //load correct movie
     @IBAction func didClickButton4(sender: AnyObject) {
         do {
             try playVideo(places[3])
@@ -244,6 +146,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //load correct movie
     @IBAction func didClickButton5(sender: AnyObject) {
         do {
             try playVideo(places[4])
@@ -254,6 +157,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //to play the movie
     private func playVideo(name : String) throws {
         guard let path = NSBundle.mainBundle().pathForResource(name, ofType:"mp4") else {
             throw AppError.InvalidResource(name, "mp4")
@@ -270,10 +174,12 @@ class ViewController: UIViewController {
         case InvalidResource(String, String)
     }
     
+    //when we go to the Chart
     func segueToChart(sender: UIBarButtonItem) {
         performSegueWithIdentifier("toChart", sender: sender)
     }
     
+    //we need to pass the array of steps every day
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Create a new variable to store the instance of PlayerTableViewController
         let destinationVC = segue.destinationViewController as! ChartViewController
