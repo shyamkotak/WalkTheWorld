@@ -15,6 +15,9 @@ import Charts
 class ViewController: UIViewController {
     
     var run : Int = 0
+    private let incompleteColor : UIColor = UIColor(red: 178/255, green: 52/255, blue: 32/255, alpha: 1)
+    private let completeColor : UIColor = UIColor(red: 32/255, green: 178/255, blue: 112/255, alpha: 1)
+
     
     @IBOutlet weak var label: UILabel!
     
@@ -35,6 +38,8 @@ class ViewController: UIViewController {
     var stepPercents : [Double] = [0, 0, 0, 0, 0]
     var places : [String] = ["Mountains_Water", "NYC", "MultipleLandscapes", "GoldenGateBridge", "CNTower"]
     var stepsPerDay : [Double] = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +80,11 @@ class ViewController: UIViewController {
         
         //show the users the # of steps they've taken
         self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
+        if Int(self.currentSteps) > 10000 {
+            self.label.textColor = completeColor
+        } else {
+            self.label.textColor = incompleteColor
+        }
     }
     
     func setStepTotals() {
