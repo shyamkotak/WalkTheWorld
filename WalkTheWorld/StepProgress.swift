@@ -12,7 +12,7 @@ class StepProgress : UIView {
     
     private let stepProgressLayer : CAShapeLayer = CAShapeLayer()
     private var stepLabel : UILabel = UILabel()
-    private var totalSteps : Double = 0.0
+    private var totalSteps : Int = 0
     private let incompleteColor : UIColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
     private let completeColor : UIColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
     
@@ -24,7 +24,7 @@ class StepProgress : UIView {
     }
     
     func setTotalSteps(steps: Double) {
-        totalSteps = steps
+        totalSteps = Int(steps)
         stepLabel.text = "\(totalSteps) Steps"
     }
     
@@ -37,7 +37,6 @@ class StepProgress : UIView {
         //set Progress Layer's path to be a circle with above req's
         let bezierPath = UIBezierPath(arcCenter: center, radius: CGRectGetWidth(frame)/2 - 15.0, startAngle: start, endAngle: end, clockwise: true)
         stepProgressLayer.path = bezierPath.CGPath
-        
         
         //customize the layer
         stepProgressLayer.strokeColor = incompleteColor.CGColor
