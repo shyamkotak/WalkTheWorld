@@ -51,108 +51,108 @@ class ViewController: UIViewController {
         let logButton : UIBarButtonItem = UIBarButtonItem(title: "RightButton", style: UIBarButtonItemStyle.Plain, target: self, action: "segueToChart:")
         self.navigationItem.rightBarButtonItem = logButton
         
-        let healthStore: HKHealthStore? = {
-            if HKHealthStore.isHealthDataAvailable() {
-                return HKHealthStore()
-            } else {
-                return nil
-            }
-        }()
-        
-        let stepsCount = HKQuantityType.quantityTypeForIdentifier(
-            HKQuantityTypeIdentifierStepCount)
-        
-        let dataTypesToRead = NSSet(object: stepsCount!)
-        
-        if (run == 0) {
-            healthStore?.requestAuthorizationToShareTypes(nil,
-                readTypes: dataTypesToRead as? Set<HKObjectType>,
-                completion: { [unowned self] (success, error) in
-                    if success {
-                        print("SUCCESS")
-                        self.run++;
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.viewDidLoad()
-                        })
-                    } else {
-                        print(error!.description)
-                    }
-                })
-        }
-        
-        
-        var counter : Int = 0;
-        
-        //this is to get the today at midnight so
-        let date = NSDate()
-        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let todayAtMidnight = cal.startOfDayForDate(date)
-        
-        let predicate = HKQuery.predicateForSamplesWithStartDate(todayAtMidnight, endDate: NSDate(), options: .None)
-        
-        let stepsSampleQuery = HKSampleQuery(sampleType: stepsCount!,
-            predicate: predicate,
-            limit: 100,
-            sortDescriptors: nil)
-            { [unowned self] (query, results, error) in
-                if let results = results as? [HKQuantitySample] {
-                    for result in results as [HKQuantitySample] {
-                        counter = counter + Int(result.quantity.doubleValueForUnit(HKUnit.countUnit()))
-                        print(counter)
-                    }
-                    self.currentSteps = Double(counter);
-                    self.run = self.run + 1;
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.viewDidLoad()
-                    })
-                }
-        }
-        
-        //this is now for the second query.
-        //we want steps taken for last 7 days
-        let sevenDaysAgo = cal.dateByAddingUnit(.Day, value: -7, toDate: NSDate(), options: [])
-        let sevenDaysAgoAtMidnight = cal.startOfDayForDate(sevenDaysAgo!)
-        
-        let interval = NSDateComponents()
-        interval.day = 1
-        
-        let query = HKStatisticsCollectionQuery(quantityType: stepsCount!,
-            quantitySamplePredicate: nil,
-            options: .CumulativeSum,
-            anchorDate: sevenDaysAgoAtMidnight,
-            intervalComponents: interval)
-        
-        query.initialResultsHandler = {
-            query, results, error in
-            
-            let statsCollection = results
-            
-            let endDate = NSDate()
-            let startDate = sevenDaysAgoAtMidnight
-            
-            // Plot the weekly step counts over the past 3 months
-            statsCollection!.enumerateStatisticsFromDate(startDate, toDate: endDate) {statistics, stop in
-                
-                if let quantity = statistics.sumQuantity() {
-                    //let date = statistics.startDate
-                    let value = quantity.doubleValueForUnit(HKUnit.countUnit())
-                    
-                    // Call a custom method to plot each data point.
-                    //self.plotWeeklyStepCount(value, forDate: date)
-                    print("I walked")
-                    print(value)
-                    self.stepsPerDay.append(value)
-                }
-            }
-        }
-        
-        
-        // Don't forget to execute the Query!
-        if(run == 1) {
-            healthStore?.executeQuery(query)
-            healthStore?.executeQuery(stepsSampleQuery)
-        }
-        if (run == 2){
+//        let healthStore: HKHealthStore? = {
+//            if HKHealthStore.isHealthDataAvailable() {
+//                return HKHealthStore()
+//            } else {
+//                return nil
+//            }
+//        }()
+//        
+//        let stepsCount = HKQuantityType.quantityTypeForIdentifier(
+//            HKQuantityTypeIdentifierStepCount)
+//        
+//        let dataTypesToRead = NSSet(object: stepsCount!)
+//        
+//        if (run == 0) {
+//            healthStore?.requestAuthorizationToShareTypes(nil,
+//                readTypes: dataTypesToRead as? Set<HKObjectType>,
+//                completion: { [unowned self] (success, error) in
+//                    if success {
+//                        print("SUCCESS")
+//                        self.run++;
+//                        dispatch_async(dispatch_get_main_queue(), {
+//                            self.viewDidLoad()
+//                        })
+//                    } else {
+//                        print(error!.description)
+//                    }
+//                })
+//        }
+//        
+//        
+//        var counter : Int = 0;
+//        
+//        //this is to get the today at midnight so
+//        let date = NSDate()
+//        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+//        let todayAtMidnight = cal.startOfDayForDate(date)
+//        
+//        let predicate = HKQuery.predicateForSamplesWithStartDate(todayAtMidnight, endDate: NSDate(), options: .None)
+//        
+//        let stepsSampleQuery = HKSampleQuery(sampleType: stepsCount!,
+//            predicate: predicate,
+//            limit: 100,
+//            sortDescriptors: nil)
+//            { [unowned self] (query, results, error) in
+//                if let results = results as? [HKQuantitySample] {
+//                    for result in results as [HKQuantitySample] {
+//                        counter = counter + Int(result.quantity.doubleValueForUnit(HKUnit.countUnit()))
+//                        print(counter)
+//                    }
+//                    self.currentSteps = Double(counter);
+//                    self.run = self.run + 1;
+//                    dispatch_async(dispatch_get_main_queue(), {
+//                        self.viewDidLoad()
+//                    })
+//                }
+//        }
+//        
+//        //this is now for the second query.
+//        //we want steps taken for last 7 days
+//        let sevenDaysAgo = cal.dateByAddingUnit(.Day, value: -7, toDate: NSDate(), options: [])
+//        let sevenDaysAgoAtMidnight = cal.startOfDayForDate(sevenDaysAgo!)
+//        
+//        let interval = NSDateComponents()
+//        interval.day = 1
+//        
+//        let query = HKStatisticsCollectionQuery(quantityType: stepsCount!,
+//            quantitySamplePredicate: nil,
+//            options: .CumulativeSum,
+//            anchorDate: sevenDaysAgoAtMidnight,
+//            intervalComponents: interval)
+//        
+//        query.initialResultsHandler = {
+//            query, results, error in
+//            
+//            let statsCollection = results
+//            
+//            let endDate = NSDate()
+//            let startDate = sevenDaysAgoAtMidnight
+//            
+//            // Plot the weekly step counts over the past 3 months
+//            statsCollection!.enumerateStatisticsFromDate(startDate, toDate: endDate) {statistics, stop in
+//                
+//                if let quantity = statistics.sumQuantity() {
+//                    //let date = statistics.startDate
+//                    let value = quantity.doubleValueForUnit(HKUnit.countUnit())
+//                    
+//                    // Call a custom method to plot each data point.
+//                    //self.plotWeeklyStepCount(value, forDate: date)
+//                    print("I walked")
+//                    print(value)
+//                    self.stepsPerDay.append(value)
+//                }
+//            }
+//        }
+//        
+//        
+//        // Don't forget to execute the Query!
+//        if(run == 1) {
+//            healthStore?.executeQuery(query)
+//            healthStore?.executeQuery(stepsSampleQuery)
+//        }
+//        if (run == 2){
             setStepTotals()
             
             for index in 0 ... (totalSteps.count - 1) {
@@ -165,7 +165,7 @@ class ViewController: UIViewController {
             }
             animateProgressCircles()
             self.label.text = String(self.currentSteps)
-        }
+//        }
     }
     
     func setStepTotals() {

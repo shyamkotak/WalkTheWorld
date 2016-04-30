@@ -6,6 +6,6 @@ target 'WalkTheWorld' do
 platform :ios, '8.0'
 use_frameworks!
 pod 'Charts', '~> 2.1.6'
-
+pod 'Gifu'
 end
 

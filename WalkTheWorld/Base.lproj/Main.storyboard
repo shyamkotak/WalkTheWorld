@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="doe-98-uMV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="doe-98-uMV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WalkTheWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="ViewController" customModule="WalkTheWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -130,12 +131,64 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="h5h-pS-Z0k"/>
+                        <segue destination="DWZ-qX-0F9" kind="relationship" relationship="rootViewController" id="p4N-z9-vFx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXy-Lx-dg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="97" y="481"/>
+        </scene>
+        <!--Walk the World-->
+        <scene sceneID="P4U-TC-aqh">
+            <objects>
+                <viewController id="DWZ-qX-0F9" customClass="LoadViewController" customModule="WalkTheWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dks-oy-5yU"/>
+                        <viewControllerLayoutGuide type="bottom" id="bJs-5c-Nol"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ahe-OQ-wTi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2t-gv-x6z" customClass="AnimatableImageView" customModule="Gifu">
+                                <rect key="frame" x="109" y="106" width="404" height="389"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiT-82-cfb">
+                                <rect key="frame" x="60" y="518" width="495" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w2t-gv-x6z" firstAttribute="centerX" secondItem="ahe-OQ-wTi" secondAttribute="centerX" id="AOf-IJ-PmD"/>
+                            <constraint firstItem="jiT-82-cfb" firstAttribute="leading" secondItem="ahe-OQ-wTi" secondAttribute="leadingMargin" constant="89" id="B8V-6k-Jgx"/>
+                            <constraint firstItem="jiT-82-cfb" firstAttribute="leading" secondItem="ahe-OQ-wTi" secondAttribute="leadingMargin" constant="40" id="Gvc-1w-ItS"/>
+                            <constraint firstItem="jiT-82-cfb" firstAttribute="top" secondItem="w2t-gv-x6z" secondAttribute="bottom" constant="23" id="I5s-RF-RrE"/>
+                            <constraint firstItem="jiT-82-cfb" firstAttribute="centerX" secondItem="ahe-OQ-wTi" secondAttribute="centerX" id="LxR-Pq-SbE"/>
+                            <constraint firstItem="w2t-gv-x6z" firstAttribute="centerY" secondItem="ahe-OQ-wTi" secondAttribute="centerY" id="cIs-NN-vuq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jiT-82-cfb" secondAttribute="trailing" constant="67" id="hCW-Td-WAA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jiT-82-cfb" secondAttribute="trailing" constant="25" id="iSv-qO-Jnj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="B8V-6k-Jgx"/>
+                                <exclude reference="LxR-Pq-SbE"/>
+                                <exclude reference="hCW-Td-WAA"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Walk the World" id="lzk-hr-CQg"/>
+                    <connections>
+                        <outlet property="FunFact" destination="jiT-82-cfb" id="Qix-Lu-5It"/>
+                        <outlet property="animatedImage" destination="w2t-gv-x6z" id="QyV-2V-ReO"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ToMainView" id="3r9-L4-eiG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3Q-1o-tSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445" y="1144"/>
         </scene>
     </scenes>
     <resources>

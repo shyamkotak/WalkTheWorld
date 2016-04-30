@@ -1,10 +1,13 @@
 PODS:
   - Charts (2.1.6)
+  - Gifu (1.0.1)
 
 DEPENDENCIES:
   - Charts (~> 2.1.6)
+  - Gifu
 
 SPEC CHECKSUMS:
   Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
+  Gifu: bf7a99fe9f20a1dc18c3cb4289aebc922a2ad419
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.39.0
