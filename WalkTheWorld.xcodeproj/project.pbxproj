@@ -104,10 +104,10 @@
 			children = (
 				1CE8C2291CD52B98004AFC77 /* load_screen_globe_gif.gif */,
 				1C00DED21CBFF01300E063BA /* AppDelegate.swift */,
+				DA4B73F61CD3F7BE00AD5DB3 /* LoadViewController.swift */,
 				1C00DED41CBFF01300E063BA /* ViewController.swift */,
 				1C00DEF41CD139D700E063BA /* ChartViewController.swift */,
 				DA30AFF41CC00F6C0013241A /* StepProgress.swift */,
-				DA4B73F61CD3F7BE00AD5DB3 /* LoadViewController.swift */,
 				1C00DED61CBFF01300E063BA /* Main.storyboard */,
 				1C00DEDC1CBFF01300E063BA /* Assets.xcassets */,
 				1C00DEEA1CBFFBBD00E063BA /* NYC.mp4 */,
