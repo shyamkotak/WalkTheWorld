@@ -56,7 +56,7 @@ class ChartViewController: UIViewController {
         //set data
         var dataEntries: [BarChartDataEntry] = []
         
-        for i in 0..<dataPoints.count {
+        for i in 0..<values.count {
             let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
         }

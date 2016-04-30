@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         animateProgressCircles()
         
         //show the users the # of steps they've taken
-        self.label.text = String(self.currentSteps)
+        self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
     }
     
     func setStepTotals() {

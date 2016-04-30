@@ -13,6 +13,8 @@ class StepProgress : UIView {
     private let stepProgressLayer : CAShapeLayer = CAShapeLayer()
     private var stepLabel : UILabel = UILabel()
     private var totalSteps : Double = 0.0
+    private let incompleteColor : UIColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
+    private let completeColor : UIColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,10 +38,9 @@ class StepProgress : UIView {
         let bezierPath = UIBezierPath(arcCenter: center, radius: CGRectGetWidth(frame)/2 - 15.0, startAngle: start, endAngle: end, clockwise: true)
         stepProgressLayer.path = bezierPath.CGPath
         
-        let customColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
         
         //customize the layer
-        stepProgressLayer.strokeColor = customColor.CGColor
+        stepProgressLayer.strokeColor = incompleteColor.CGColor
         stepProgressLayer.fillColor = nil
         stepProgressLayer.lineWidth = 4.0
         
@@ -57,8 +58,7 @@ class StepProgress : UIView {
         
         //customize the label
         stepLabel.font = UIFont (name: "Helvetica Neue", size: 12)
-        let customColor = UIColor(red: 107/255, green: 203/255, blue: 92/255, alpha: 1)
-        stepLabel.textColor = customColor
+        stepLabel.textColor = incompleteColor
         
         stepLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stepLabel)
@@ -85,7 +85,11 @@ class StepProgress : UIView {
         animation.fillMode = kCAFillModeForwards
         animation.removedOnCompletion = false
         
-        stepProgressLayer.addAnimation(animation, forKey: "strokeEnd")
+        if(endValue == 1) {
+            self.stepLabel.textColor = completeColor
+            self.stepProgressLayer.strokeColor = completeColor.CGColor
+        }
         
+        stepProgressLayer.addAnimation(animation, forKey: "strokeEnd")
     }
 }

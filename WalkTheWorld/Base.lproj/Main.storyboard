@@ -15,73 +15,141 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-UP-BX9" userLabel="Button1">
-                                <rect key="frame" x="140" y="100" width="440" height="92"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKc-UP-BX9" userLabel="Button1">
+                                <rect key="frame" x="140" y="37" width="440" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="SA6-gH-m5y"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="Button_Mountains"/>
                                 <connections>
                                     <action selector="didClickButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0n-92-vrO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDt-6C-y7y" userLabel="Button2">
-                                <rect key="frame" x="140" y="200" width="440" height="92"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDt-6C-y7y" userLabel="Button2">
+                                <rect key="frame" x="140" y="137" width="440" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="bkr-oF-yv8"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="Button_NewYork"/>
                                 <connections>
                                     <action selector="didClickButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRm-Yr-r1o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-Y1-Rg6" userLabel="Button3">
-                                <rect key="frame" x="140" y="300" width="440" height="92"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-Y1-Rg6" userLabel="Button3">
+                                <rect key="frame" x="140" y="237" width="440" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="rjM-0d-Om5"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="Button_RedRock"/>
                                 <connections>
                                     <action selector="didClickButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1wq-Je-Dqg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-Lm-Fdq" userLabel="Button4">
-                                <rect key="frame" x="140" y="400" width="440" height="92"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-Lm-Fdq" userLabel="Button4">
+                                <rect key="frame" x="140" y="337" width="440" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="Nrp-hI-LYz"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="Button_SanFran"/>
                                 <connections>
                                     <action selector="didClickButton4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5eF-MY-02n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUM-ih-tpa" userLabel="Button5">
-                                <rect key="frame" x="140" y="500" width="440" height="92"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUM-ih-tpa" userLabel="Button5">
+                                <rect key="frame" x="140" y="437" width="440" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="Zn2-OP-BJp"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="Seattle"/>
                                 <connections>
                                     <action selector="didClickButton5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcJ-fm-imy"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-Pz-RGY" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="100" width="112" height="92"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ht-9r-FDf" userLabel="Step Progress2" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="20" y="137" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="MGf-dj-MBZ"/>
+                                    <constraint firstAttribute="width" constant="112" id="cFI-4c-nex"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ht-9r-FDf" userLabel="Step Progress2" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="200" width="112" height="92"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-fQ-tIE" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="20" y="237" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="Pnl-xo-Rfn"/>
+                                    <constraint firstAttribute="height" constant="92" id="a8T-8t-42g"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAY-fQ-tIE" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="300" width="112" height="92"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xmf-Zv-wGO" userLabel="Step Progress4" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="20" y="337" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="c6i-dQ-8TY"/>
+                                    <constraint firstAttribute="width" constant="112" id="ms1-xr-BKy"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmf-Zv-wGO" userLabel="Step Progress4" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="400" width="112" height="92"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHo-nL-42h" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="20" y="437" width="112" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="uZd-ts-aLo"/>
+                                    <constraint firstAttribute="height" constant="92" id="vK9-rZ-5VB"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHo-nL-42h" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
-                                <rect key="frame" x="20" y="500" width="112" height="92"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKm-1U-Djf">
-                                <rect key="frame" x="20" y="71" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKm-1U-Djf">
+                                <rect key="frame" x="20" y="8" width="560" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-Pz-RGY" customClass="StepProgress" customModule="WalkTheWorld" customModuleProvider="target">
+                                <rect key="frame" x="20" y="37" width="112" height="92"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="92" id="mt3-bT-JNE"/>
+                                    <constraint firstAttribute="width" constant="112" id="xGb-jR-xqp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YfS-Y1-Rg6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0wf-d7-LCi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vHo-nL-42h" secondAttribute="bottom" constant="7" id="1DN-Yb-CdP"/>
+                            <constraint firstItem="HKm-1U-Djf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3SA-43-iOD"/>
+                            <constraint firstItem="hPh-Pz-RGY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3V8-d6-U7C"/>
+                            <constraint firstItem="YfS-Y1-Rg6" firstAttribute="top" secondItem="aDt-6C-y7y" secondAttribute="bottom" constant="8" id="5QQ-fm-W8I"/>
+                            <constraint firstItem="DAY-fQ-tIE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8QK-UN-2ju"/>
+                            <constraint firstItem="hPh-Pz-RGY" firstAttribute="top" secondItem="HKm-1U-Djf" secondAttribute="bottom" constant="8" id="AaV-ih-Mbu"/>
+                            <constraint firstItem="Xmf-Zv-wGO" firstAttribute="top" secondItem="DAY-fQ-tIE" secondAttribute="bottom" constant="8" id="CCz-sQ-bPV"/>
+                            <constraint firstItem="aDt-6C-y7y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DeC-fH-bvA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tUM-ih-tpa" secondAttribute="bottom" constant="7" id="EZX-CY-nFz"/>
+                            <constraint firstItem="aDt-6C-y7y" firstAttribute="leading" secondItem="9Ht-9r-FDf" secondAttribute="trailing" constant="8" id="Foe-KT-Rph"/>
+                            <constraint firstItem="vHo-nL-42h" firstAttribute="top" secondItem="Xmf-Zv-wGO" secondAttribute="bottom" constant="8" id="ICf-yC-ztz"/>
+                            <constraint firstItem="pDk-Lm-Fdq" firstAttribute="leading" secondItem="Xmf-Zv-wGO" secondAttribute="trailing" constant="8" id="LqB-JA-dzu"/>
+                            <constraint firstItem="tUM-ih-tpa" firstAttribute="leading" secondItem="vHo-nL-42h" secondAttribute="trailing" constant="8" id="NpK-Qw-4E7"/>
+                            <constraint firstItem="tUM-ih-tpa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Oqc-vp-qth"/>
+                            <constraint firstItem="DAY-fQ-tIE" firstAttribute="top" secondItem="9Ht-9r-FDf" secondAttribute="bottom" constant="8" id="RCT-Ro-Pa8"/>
+                            <constraint firstItem="vHo-nL-42h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="b84-W8-Co4"/>
+                            <constraint firstItem="HKm-1U-Djf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ehn-OC-5o7"/>
+                            <constraint firstItem="pDk-Lm-Fdq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="g3S-vH-AVf"/>
+                            <constraint firstItem="vKc-UP-BX9" firstAttribute="top" secondItem="hPh-Pz-RGY" secondAttribute="top" id="kFH-un-bac"/>
+                            <constraint firstItem="vKc-UP-BX9" firstAttribute="leading" secondItem="hPh-Pz-RGY" secondAttribute="trailing" constant="8" id="mpw-bk-75I"/>
+                            <constraint firstItem="YfS-Y1-Rg6" firstAttribute="leading" secondItem="DAY-fQ-tIE" secondAttribute="trailing" constant="8" id="n01-QW-HEZ"/>
+                            <constraint firstItem="9Ht-9r-FDf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pSl-Kw-GDP"/>
+                            <constraint firstItem="pDk-Lm-Fdq" firstAttribute="top" secondItem="YfS-Y1-Rg6" secondAttribute="bottom" constant="8" id="trK-0B-RQp"/>
+                            <constraint firstItem="Xmf-Zv-wGO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ueL-TD-Xys"/>
+                            <constraint firstItem="vKc-UP-BX9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vGy-FU-W2U"/>
+                            <constraint firstItem="HKm-1U-Djf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vg2-fq-2Dq"/>
+                            <constraint firstItem="aDt-6C-y7y" firstAttribute="top" secondItem="vKc-UP-BX9" secondAttribute="bottom" constant="8" id="x3O-sS-12R"/>
+                            <constraint firstItem="9Ht-9r-FDf" firstAttribute="top" secondItem="hPh-Pz-RGY" secondAttribute="bottom" constant="8" id="x7N-Se-H8d"/>
+                            <constraint firstItem="tUM-ih-tpa" firstAttribute="top" secondItem="pDk-Lm-Fdq" secondAttribute="bottom" constant="8" id="xes-Rn-W6n"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="tY6-Js-b1P">
                         <barButtonItem key="backBarButtonItem" title="Home" id="wX5-Df-ZkY"/>
                     </navigationItem>
