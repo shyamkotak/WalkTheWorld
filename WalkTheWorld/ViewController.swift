@@ -40,6 +40,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //remove back button
+        self.navigationItem.hidesBackButton = true
+        
         //grey out all videos
         buttonImage1.enabled = false
         buttonImage2.enabled = false

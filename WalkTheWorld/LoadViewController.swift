@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import HealthKit
-
+import Gifu
 
 class LoadViewController: UIViewController {
     
@@ -17,55 +17,34 @@ class LoadViewController: UIViewController {
     var currentSteps: Double = 0
     var stepsPerDay : [Double] = []
 
-    
     @IBOutlet weak var animatedImage: AnimatableImageView!
     @IBOutlet weak var FunFact: UILabel!
     var facts: [String] = ["If you add just 2,000 more steps a day to your regular activities, you may never gain another pound.", "Walking around 20-25 miles each week can extend your life by a couple of years."]
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelFact()
         animatedImage.animateWithImage(named: "load_screen_globe_gif.gif")
-        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
-        dispatch_after(time, dispatch_get_main_queue()) {
-            self.performSegueWithIdentifier("ToMainView", sender: self)
-            
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("ViewController")
-//            self.presentViewController(nextViewController, animated:true, completion:nil)
-//            let vc : AnyObject! = self.storyboard!.
-//            var vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("mainView")
-//            let segue =
-//            let destinationVC = segue.destinationViewController as! UIViewController
-//            destinationVC.currentSteps = currentSteps
-//            destinationVC.stepsPerDay = stepsPerDay
-//            self.showViewController(vc as! UIViewController, sender: vc)
-            
-//            let destinationVC = segue.destinationViewController as! ChartViewController
-//            destinationVC.stepsPerDay = self.stepsPerDay
-        }
-        
-        
-        
+        gatherHealthData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "ToMainView" {
+            print("here")
+            print(self.currentSteps)
+            print(self.stepsPerDay)
             let destinationVC = segue.destinationViewController as! ViewController
-            destinationVC.currentSteps = currentSteps
-            destinationVC.stepsPerDay = stepsPerDay
+            destinationVC.currentSteps = self.currentSteps
+            destinationVC.stepsPerDay = self.stepsPerDay
         }
     }
     
     func setLabelFact() {
-         let index = Int(arc4random_uniform(UInt32(facts.count)) + 1)
-        print(index-1)
+        let index = Int(arc4random_uniform(UInt32(facts.count)) + 1)
+        //print(index-1)
         FunFact.text = facts[index-1]
         FunFact.textColor = UIColor.whiteColor()
     }
-    
     
     func gatherHealthData() {
         let healthStore: HKHealthStore? = {
@@ -89,7 +68,7 @@ class LoadViewController: UIViewController {
                         print("SUCCESS")
                         self.run++;
                         dispatch_async(dispatch_get_main_queue(), {
-                            self.viewDidLoad()
+                            self.gatherHealthData()
                         })
                     } else {
                         print(error!.description)
@@ -120,7 +99,7 @@ class LoadViewController: UIViewController {
                     self.currentSteps = Double(counter);
                     self.run = self.run + 1;
                     dispatch_async(dispatch_get_main_queue(), {
-                        self.viewDidLoad()
+                        self.gatherHealthData()
                     })
                 }
         }
@@ -151,23 +130,26 @@ class LoadViewController: UIViewController {
             statsCollection!.enumerateStatisticsFromDate(startDate, toDate: endDate) {statistics, stop in
                 
                 if let quantity = statistics.sumQuantity() {
-                    //let date = statistics.startDate
                     let value = quantity.doubleValueForUnit(HKUnit.countUnit())
                     
-                    // Call a custom method to plot each data point.
-                    //self.plotWeeklyStepCount(value, forDate: date)
                     print("I walked")
                     print(value)
                     self.stepsPerDay.append(value)
                 }
             }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.performSegueWithIdentifier("ToMainView", sender: self)
+            })
         }
-        
         
         // Don't forget to execute the Query!
         if(run == 1) {
-            healthStore?.executeQuery(query)
             healthStore?.executeQuery(stepsSampleQuery)
+        }
+        
+        if(run == 2) {
+            print("yo whats up")
+            healthStore?.executeQuery(query)
         }
 
     }
