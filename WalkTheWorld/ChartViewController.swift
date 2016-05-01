@@ -14,6 +14,7 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
     var days : [String] = []
     var stepsPerDay : [Double] = []
+    var stepGoal : Int = 10000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +79,7 @@ class ChartViewController: UIViewController {
         barChartView.descriptionText = ""
         
         //set target
-        let ll = ChartLimitLine(limit: 10000, label: "")
+        let ll = ChartLimitLine(limit: Double(stepGoal), label: "")
         barChartView.rightAxis.addLimitLine(ll)
         
         //change x axis

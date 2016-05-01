@@ -41,8 +41,7 @@ class SettingsViewController: UIViewController {
     }
     
     func saveStepGoal(goal: Int) {
-        if goal > 1000 {
-            print("GOAL IS \(goal)")
+        if goal > 0 {
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
             let employeesFetch = NSFetchRequest(entityName: "StepGoal")

@@ -46,7 +46,6 @@ class ViewController: UIViewController {
         findStepGoal()
         if originalGoal != stepGoal {
             setProgressCircleGoals()
-            print("Step Goal!\( stepGoal)")
             //grey out all videos
             buttonImage1.enabled = false
             buttonImage2.enabled = false
@@ -77,7 +76,6 @@ class ViewController: UIViewController {
     }
     
     func setProgressCircleGoals() {
-        print("stepGoal is \(stepGoal)")
         totalSteps[0] = Double(stepGoal)
         totalSteps[1] = totalSteps[0] - Double(stepGoal/5)
         totalSteps[2] = totalSteps[1] - Double(stepGoal/5)
@@ -282,11 +280,11 @@ class ViewController: UIViewController {
             let destinationVC = segue.destinationViewController as! SettingsViewController
             destinationVC.currentStepGoal = self.stepGoal
             destinationVC.stepsPerDay = self.stepsPerDay
-            //destinationVC.stepsPerDay = [10000, 3000, 2000, 4500, 0]
         } else {
             // Create a new variable to store the instance of ChartViewController
             let destinationVC = segue.destinationViewController as! ChartViewController
             destinationVC.stepsPerDay = self.stepsPerDay
+            destinationVC.stepGoal = self.stepGoal
         }
     }
 
