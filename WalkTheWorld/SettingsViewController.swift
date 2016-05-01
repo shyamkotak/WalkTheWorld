@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 import CoreData
+import Gifu
 
 class SettingsViewController: UIViewController {
     
@@ -18,12 +19,15 @@ class SettingsViewController: UIViewController {
     @IBOutlet var currentLabel: UILabel!
     @IBOutlet weak var promptLabel: UILabel!
     var stepsPerDay : [Double] = []
-    
+//    @IBOutlet var footSteps: AnimatableImageView!
+    @IBOutlet var footSteps: AnimatableImageView!
+
     @IBOutlet var suggestedSteps: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         suggestGoal()
+        footSteps.animateWithImage(named: "footprintsGIF.gif")
         currentLabel.textColor = UIColor.whiteColor()
         promptLabel.textColor = UIColor.whiteColor()
         currentLabel.text = "Current step goal: \(currentStepGoal)"
@@ -98,26 +102,6 @@ class SettingsViewController: UIViewController {
         
         return max
     }
-    
-    
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        let destinationVC = segue.destinationViewController as! ViewController
-//        destinationVC.findStepGoal()
-//        destinationVC.setProgressCircleGoals()
-//        
-//        //grey out all videos
-//        destinationVC.buttonImage1.enabled = false
-//        destinationVC.buttonImage2.enabled = false
-//        destinationVC.buttonImage3.enabled = false
-//        destinationVC.buttonImage4.enabled = false
-//        destinationVC.buttonImage5.enabled = false
-//        
-//        //make those cool bars
-//        destinationVC.setStepTotals()
-//
-//    }
-    
     
     
     

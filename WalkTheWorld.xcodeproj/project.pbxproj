@@ -29,6 +29,7 @@
 		DA4257F11CD64C24006FA198 /* WalkTheWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA4257EF1CD64C24006FA198 /* WalkTheWorld.xcdatamodeld */; };
 		DA4B73F71CD3F7BE00AD5DB3 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B73F61CD3F7BE00AD5DB3 /* LoadViewController.swift */; };
 		DA4B73FB1CD3F8AE00AD5DB3 /* Gifu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4B73FA1CD3F8AE00AD5DB3 /* Gifu.framework */; };
+		DAC275B31CD6A640005D58C0 /* footprintsGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = DAC275B21CD6A640005D58C0 /* footprintsGIF.gif */; };
 		DAF9E2891CD1CA660043C03D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF9E2881CD1CA660043C03D /* Charts.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		DA4257F01CD64C24006FA198 /* WalkTheWorld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalkTheWorld.xcdatamodel; sourceTree = "<group>"; };
 		DA4B73F61CD3F7BE00AD5DB3 /* LoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		DA4B73FA1CD3F8AE00AD5DB3 /* Gifu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gifu.framework; path = "Pods/../build/Debug-iphoneos/Gifu.framework"; sourceTree = "<group>"; };
+		DAC275B21CD6A640005D58C0 /* footprintsGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = footprintsGIF.gif; sourceTree = "<group>"; };
 		DAF9E2881CD1CA660043C03D /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Pods-WalkTheWorld/Charts.framework"; sourceTree = "<group>"; };
 		E9910023AA2B963AEF2D35C0 /* Pods-WalkTheWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalkTheWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalkTheWorld/Pods-WalkTheWorld.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 			children = (
 				1CE8C2291CD52B98004AFC77 /* load_screen_globe_gif.gif */,
 				1CE8C22B1CD555F8004AFC77 /* bar-chart-7-xxl.png */,
+				DAC275B21CD6A640005D58C0 /* footprintsGIF.gif */,
 			);
 			name = Multimedia;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				1CE8C22C1CD555F8004AFC77 /* bar-chart-7-xxl.png in Resources */,
 				1C00DEF31CC5526A00E063BA /* MultipleLandscapes.mp4 in Resources */,
 				1C00DEEB1CBFFBC600E063BA /* NYC.mp4 in Resources */,
+				DAC275B31CD6A640005D58C0 /* footprintsGIF.gif in Resources */,
 				1C00DEE01CBFF01300E063BA /* LaunchScreen.storyboard in Resources */,
 				1C00DEDD1CBFF01300E063BA /* Assets.xcassets in Resources */,
 				1C00DED81CBFF01300E063BA /* Main.storyboard in Resources */,

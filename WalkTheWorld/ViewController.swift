@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         
             //show the users the # of steps they've taken
             self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
-            if Int(self.currentSteps) > stepGoal {
+            if Int(self.currentSteps) >= stepGoal {
                 self.label.textColor = completeColor
             } else {
                 self.label.textColor = incompleteColor
@@ -135,7 +135,7 @@ class ViewController: UIViewController {
         
         //show the users the # of steps they've taken
         self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
-        if Int(self.currentSteps) > stepGoal {
+        if Int(self.currentSteps) >= stepGoal {
             self.label.textColor = completeColor
         } else {
             self.label.textColor = incompleteColor
