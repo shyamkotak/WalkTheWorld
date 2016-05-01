@@ -240,11 +240,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2t-gv-x6z" customClass="AnimatableImageView" customModule="Gifu">
-                                <rect key="frame" x="109" y="106" width="404" height="389"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="load_screen_globe_gif.gif" translatesAutoresizingMaskIntoConstraints="NO" id="w2t-gv-x6z" customClass="AnimatableImageView" customModule="Gifu">
+                                <rect key="frame" x="152" y="152" width="297" height="297"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiT-82-cfb">
-                                <rect key="frame" x="60" y="518" width="495" height="53"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label  Label Label Label Label Label Label Label " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiT-82-cfb">
+                                <rect key="frame" x="100" y="507" width="400" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -252,22 +252,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="w2t-gv-x6z" firstAttribute="centerX" secondItem="ahe-OQ-wTi" secondAttribute="centerX" id="AOf-IJ-PmD"/>
-                            <constraint firstItem="jiT-82-cfb" firstAttribute="leading" secondItem="ahe-OQ-wTi" secondAttribute="leadingMargin" constant="89" id="B8V-6k-Jgx"/>
-                            <constraint firstItem="jiT-82-cfb" firstAttribute="leading" secondItem="ahe-OQ-wTi" secondAttribute="leadingMargin" constant="40" id="Gvc-1w-ItS"/>
-                            <constraint firstItem="jiT-82-cfb" firstAttribute="top" secondItem="w2t-gv-x6z" secondAttribute="bottom" constant="23" id="I5s-RF-RrE"/>
-                            <constraint firstItem="jiT-82-cfb" firstAttribute="centerX" secondItem="ahe-OQ-wTi" secondAttribute="centerX" id="LxR-Pq-SbE"/>
-                            <constraint firstItem="w2t-gv-x6z" firstAttribute="centerY" secondItem="ahe-OQ-wTi" secondAttribute="centerY" id="cIs-NN-vuq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jiT-82-cfb" secondAttribute="trailing" constant="67" id="hCW-Td-WAA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jiT-82-cfb" secondAttribute="trailing" constant="25" id="iSv-qO-Jnj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jiT-82-cfb" secondAttribute="trailing" constant="80" id="5Pp-ue-IZY"/>
+                            <constraint firstItem="jiT-82-cfb" firstAttribute="leading" secondItem="ahe-OQ-wTi" secondAttribute="leadingMargin" constant="80" id="X5P-PP-w31"/>
+                            <constraint firstItem="jiT-82-cfb" firstAttribute="top" secondItem="w2t-gv-x6z" secondAttribute="bottom" constant="58" id="eWi-mo-kHd"/>
+                            <constraint firstItem="w2t-gv-x6z" firstAttribute="centerY" secondItem="ahe-OQ-wTi" secondAttribute="centerY" id="hAz-ht-QOZ"/>
+                            <constraint firstItem="w2t-gv-x6z" firstAttribute="centerX" secondItem="ahe-OQ-wTi" secondAttribute="centerX" id="sxc-8S-JQ7"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="B8V-6k-Jgx"/>
-                                <exclude reference="LxR-Pq-SbE"/>
-                                <exclude reference="hCW-Td-WAA"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Walk the World" id="lzk-hr-CQg">
                         <barButtonItem key="leftBarButtonItem" id="iZc-Zr-DvC" userLabel="Settings"/>
@@ -366,5 +356,6 @@
         <image name="Button_RedRock" width="2464" height="1378"/>
         <image name="Button_SanFran" width="2470" height="1376"/>
         <image name="Seattle" width="2450" height="1372"/>
+        <image name="load_screen_globe_gif.gif" width="297" height="297"/>
     </resources>
 </document>

@@ -163,7 +163,7 @@ class LoadViewController: UIViewController {
             }
             //and when we're done with the second query, we can go to the mainview
             dispatch_async(dispatch_get_main_queue(), {
-                self.performSegueWithIdentifier("ToMainView", sender: self)
+               // self.performSegueWithIdentifier("ToMainView", sender: self)
             })
         }
         
