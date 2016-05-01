@@ -41,7 +41,6 @@ class ViewController: UIViewController {
     var stepsPerDay : [Double] = []
     var stepGoal : Int = 10000
     
-    
     override func viewDidAppear(animated: Bool) {
         let originalGoal = stepGoal
         findStepGoal()
