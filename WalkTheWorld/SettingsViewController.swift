@@ -25,12 +25,15 @@ class SettingsViewController: UIViewController {
         currentLabel.text = "Current step goal: \(currentStepGoal)"
         inputSteps.keyboardType = UIKeyboardType.NumberPad
 
-
     }
     
     @IBAction func buttonClick(sender: AnyObject) {
         saveStepGoal(Int(inputSteps.text!)!)
         currentLabel.text = "Current step goal: \(currentStepGoal)"
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
     
     func saveStepGoal(goal: Int) {
@@ -62,5 +65,26 @@ class SettingsViewController: UIViewController {
             }
         }
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        let destinationVC = segue.destinationViewController as! ViewController
+//        destinationVC.findStepGoal()
+//        destinationVC.setProgressCircleGoals()
+//        
+//        //grey out all videos
+//        destinationVC.buttonImage1.enabled = false
+//        destinationVC.buttonImage2.enabled = false
+//        destinationVC.buttonImage3.enabled = false
+//        destinationVC.buttonImage4.enabled = false
+//        destinationVC.buttonImage5.enabled = false
+//        
+//        //make those cool bars
+//        destinationVC.setStepTotals()
+//
+//    }
+    
+    
+    
+    
 }
 

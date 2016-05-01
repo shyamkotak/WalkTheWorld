@@ -43,34 +43,37 @@ class ViewController: UIViewController {
     
     
     override func viewDidAppear(animated: Bool) {
+        let originalGoal = stepGoal
         findStepGoal()
-        setProgressCircleGoals()
-        print("Step Goal!\( stepGoal)")
-        //grey out all videos
-        buttonImage1.enabled = false
-        buttonImage2.enabled = false
-        buttonImage3.enabled = false
-        buttonImage4.enabled = false
-        buttonImage5.enabled = false
+        if originalGoal != stepGoal {
+            setProgressCircleGoals()
+            print("Step Goal!\( stepGoal)")
+            //grey out all videos
+            buttonImage1.enabled = false
+            buttonImage2.enabled = false
+            buttonImage3.enabled = false
+            buttonImage4.enabled = false
+            buttonImage5.enabled = false
         
-        //make those cool bars
-        setStepTotals()
-        for index in 0 ... (totalSteps.count - 1) {
-            var stepPercent = currentSteps / totalSteps[index]
-            if stepPercent > 1.0 {
-                stepPercent = 1.0
-                enableButton(index+1)
+            //make those cool bars
+            setStepTotals()
+            for index in 0 ... (totalSteps.count - 1) {
+                var stepPercent = currentSteps / totalSteps[index]
+                if stepPercent > 1.0 {
+                    stepPercent = 1.0
+                    enableButton(index+1)
+                }
+                stepPercents[index] = stepPercent
             }
-            stepPercents[index] = stepPercent
-        }
-        animateProgressCircles()
+            animateProgressCircles()
         
-        //show the users the # of steps they've taken
-        self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
-        if Int(self.currentSteps) > stepGoal {
-            self.label.textColor = completeColor
-        } else {
-            self.label.textColor = incompleteColor
+            //show the users the # of steps they've taken
+            self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
+            if Int(self.currentSteps) > stepGoal {
+                self.label.textColor = completeColor
+            } else {
+                self.label.textColor = incompleteColor
+            }
         }
     }
     
@@ -111,35 +114,35 @@ class ViewController: UIViewController {
         
         //place button in top right
         self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(customView: settingsBtn), animated: true)
-//        findStepGoal()
-//        setProgressCircleGoals()
-//        
-//        //grey out all videos
-//        buttonImage1.enabled = false
-//        buttonImage2.enabled = false
-//        buttonImage3.enabled = false
-//        buttonImage4.enabled = false
-//        buttonImage5.enabled = false
-//        
-//        //make those cool bars
-//        setStepTotals()
-//        for index in 0 ... (totalSteps.count - 1) {
-//            var stepPercent = currentSteps / totalSteps[index]
-//            if stepPercent > 1.0 {
-//                stepPercent = 1.0
-//                enableButton(index+1)
-//            }
-//            stepPercents[index] = stepPercent
-//        }
-//        animateProgressCircles()
-//        
-//        //show the users the # of steps they've taken
-//        self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
-//        if Int(self.currentSteps) > stepGoal {
-//            self.label.textColor = completeColor
-//        } else {
-//            self.label.textColor = incompleteColor
-//        }
+        findStepGoal()
+        setProgressCircleGoals()
+        
+        //grey out all videos
+        buttonImage1.enabled = false
+        buttonImage2.enabled = false
+        buttonImage3.enabled = false
+        buttonImage4.enabled = false
+        buttonImage5.enabled = false
+        
+        //make those cool bars
+        setStepTotals()
+        for index in 0 ... (totalSteps.count - 1) {
+            var stepPercent = currentSteps / totalSteps[index]
+            if stepPercent > 1.0 {
+                stepPercent = 1.0
+                enableButton(index+1)
+            }
+            stepPercents[index] = stepPercent
+        }
+        animateProgressCircles()
+        
+        //show the users the # of steps they've taken
+        self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
+        if Int(self.currentSteps) > stepGoal {
+            self.label.textColor = completeColor
+        } else {
+            self.label.textColor = incompleteColor
+        }
     }
     
     func findStepGoal() {
