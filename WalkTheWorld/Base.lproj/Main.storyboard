@@ -294,26 +294,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set your personal step goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyU-78-fXg">
-                                <rect key="frame" x="170" y="206" width="214" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your personal step goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyU-78-fXg">
+                                <rect key="frame" x="193" y="206" width="214" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cg-si-n7i">
-                                <rect key="frame" x="236" y="235" width="129" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cg-si-n7i">
+                                <rect key="frame" x="193" y="235" width="214" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asV-lR-oQs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asV-lR-oQs">
                                 <rect key="frame" x="264" y="271" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="buttonClick:" destination="A1p-Qp-nan" eventType="touchUpInside" id="ecF-B0-0Jg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current step goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7L-7P-B1Q">
-                                <rect key="frame" x="150" y="177" width="300" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current step goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7L-7P-B1Q">
+                                <rect key="frame" x="231" y="177" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -324,8 +324,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="STEP GOAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsL-Fg-y6U">
-                                <rect key="frame" x="246" y="317" width="107" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP GOAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsL-Fg-y6U">
+                                <rect key="frame" x="254" y="317" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -333,18 +333,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="asV-lR-oQs" firstAttribute="top" secondItem="0cg-si-n7i" secondAttribute="bottom" constant="6" id="4GS-e9-itY"/>
                             <constraint firstItem="QsL-Fg-y6U" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="7Hq-Nv-KdB"/>
-                            <constraint firstItem="0cg-si-n7i" firstAttribute="width" secondItem="xyU-78-fXg" secondAttribute="width" id="HQP-UI-OqD"/>
-                            <constraint firstItem="0cg-si-n7i" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="SJT-En-UPn"/>
+                            <constraint firstItem="0cg-si-n7i" firstAttribute="leading" secondItem="xyU-78-fXg" secondAttribute="leading" id="Sa8-bV-LQ3"/>
                             <constraint firstItem="XXv-n1-aa8" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="U4Q-vR-uSv"/>
                             <constraint firstItem="q7L-7P-B1Q" firstAttribute="top" secondItem="XXv-n1-aa8" secondAttribute="bottom" constant="24" id="UZK-dg-1no"/>
-                            <constraint firstItem="0cg-si-n7i" firstAttribute="top" secondItem="xyU-78-fXg" secondAttribute="bottom" constant="8" id="YUm-rk-1iF"/>
-                            <constraint firstItem="xyU-78-fXg" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="eky-0n-bgV"/>
-                            <constraint firstItem="xyU-78-fXg" firstAttribute="top" secondItem="q7L-7P-B1Q" secondAttribute="bottom" constant="8" id="nqX-3z-dZE"/>
+                            <constraint firstItem="asV-lR-oQs" firstAttribute="top" secondItem="0cg-si-n7i" secondAttribute="bottom" constant="6" id="W43-Qk-Ptq"/>
+                            <constraint firstItem="xyU-78-fXg" firstAttribute="top" secondItem="q7L-7P-B1Q" secondAttribute="bottom" constant="8" symbolic="YES" id="hVg-P2-7H6"/>
+                            <constraint firstItem="0cg-si-n7i" firstAttribute="top" secondItem="xyU-78-fXg" secondAttribute="bottom" constant="8" symbolic="YES" id="hiZ-xH-pZQ"/>
                             <constraint firstItem="XXv-n1-aa8" firstAttribute="top" secondItem="D5P-h7-xH2" secondAttribute="bottom" constant="68" id="ox0-lF-oNE"/>
                             <constraint firstItem="q7L-7P-B1Q" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="qJY-wq-0bd"/>
-                            <constraint firstItem="asV-lR-oQs" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="qVm-ak-gZh"/>
+                            <constraint firstItem="asV-lR-oQs" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" constant="-10.5" id="qVm-ak-gZh"/>
+                            <constraint firstItem="xyU-78-fXg" firstAttribute="centerX" secondItem="q7L-7P-B1Q" secondAttribute="centerX" id="uzI-b4-93i"/>
+                            <constraint firstItem="0cg-si-n7i" firstAttribute="trailing" secondItem="xyU-78-fXg" secondAttribute="trailing" id="vo2-GP-bay"/>
                             <constraint firstItem="QsL-Fg-y6U" firstAttribute="top" secondItem="asV-lR-oQs" secondAttribute="bottom" constant="16" id="xEv-be-zKe"/>
                         </constraints>
                     </view>
