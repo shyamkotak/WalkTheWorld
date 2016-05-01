@@ -2,7 +2,7 @@
 //  LoadViewController.swift
 //  WalkTheWorld
 //
-//  Created by Julia Pohlmann on 4/29/16.
+//  Created by Julia Pohlmann on 4/17/16.
 //  Copyright © 2016 JS. All rights reserved.
 //
 
@@ -28,7 +28,10 @@ class LoadViewController: UIViewController {
     //we put a fun fact underneath the image
     @IBOutlet weak var FunFact: UILabel!
     //these are some sample facts
-    var facts: [String] = ["If you add just 2,000 more steps a day to your regular activities, you may never gain another pound.", "Walking around 20-25 miles each week can extend your life by a couple of years."]
+    var facts: [String] = ["If you add just 2,000 more steps a day to your regular activities, you may never gain another pound.", "Walking around 20-25 miles each week can extend your life by a couple of years.", "A 20-minute walk, or about 2,000 steps, equal a mile", "The most popular form of exercise in the United States is walking", "A typical pair of tennis shoes will last 500 miles of walking.", "The United States walks the least of any industrialized nation."]
+    
+    private let greyBarColor : UIColor = UIColor(red: 209/225, green: 209/255, blue: 209/225, alpha: 1)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +47,8 @@ class LoadViewController: UIViewController {
         if segue.identifier == "ToMainView" {
             //need to pass information from the queries
             let destinationVC = segue.destinationViewController as! ViewController
-            destinationVC.currentSteps = self.currentSteps
+            //destinationVC.currentSteps = self.currentSteps
+            destinationVC.currentSteps = 7500
             destinationVC.stepsPerDay = self.stepsPerDay
         }
     }
@@ -173,6 +177,10 @@ class LoadViewController: UIViewController {
             healthStore?.executeQuery(query)
         }
 
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
     
     

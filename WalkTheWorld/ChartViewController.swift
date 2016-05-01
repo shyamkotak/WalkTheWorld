@@ -2,7 +2,7 @@
 //  ChartViewController.swift
 //  WalkTheWorld
 //
-//  Created by Shyam Kotak on 4/27/16.
+//  Created by Shyam Kotak on 4/19/16.
 //  Copyright © 2016 JS. All rights reserved.
 //
 
@@ -96,6 +96,10 @@ class ChartViewController: UIViewController {
         
         barChartView.scaleXEnabled = false;
         barChartView.scaleYEnabled = false;
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
 
 }

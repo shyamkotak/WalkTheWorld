@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var run : Int = 0
     private let incompleteColor : UIColor = UIColor(red: 178/255, green: 52/255, blue: 32/255, alpha: 1)
     private let completeColor : UIColor = UIColor(red: 32/255, green: 178/255, blue: 112/255, alpha: 1)
+    private let greyBarColor : UIColor = UIColor(red: 209/225, green: 209/255, blue: 209/225, alpha: 1)
 
     
     @IBOutlet weak var label: UILabel!
@@ -46,7 +47,7 @@ class ViewController: UIViewController {
         
         //set title
         self.navigationItem.title = "Walk The World"
-        
+
         //remove back button
         self.navigationItem.hidesBackButton = true
         
@@ -207,6 +208,10 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
     
 }
