@@ -17,9 +17,13 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var inputSteps: UITextField!
     @IBOutlet var currentLabel: UILabel!
     @IBOutlet weak var promptLabel: UILabel!
+    var stepsPerDay : [Double] = []
+    
+    @IBOutlet var suggestedSteps: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        suggestGoal()
         currentLabel.textColor = UIColor.whiteColor()
         promptLabel.textColor = UIColor.whiteColor()
         currentLabel.text = "Current step goal: \(currentStepGoal)"
@@ -65,6 +69,38 @@ class SettingsViewController: UIViewController {
             }
         }
     }
+    
+    func suggestGoal () {
+        var goal = 10000
+        if stepsPerDay.count > 0 {
+            goal = findAverage()
+            let max = findMax()
+            goal = max - (max - goal)/2
+        }
+        suggestedSteps.text = "Suggested goal: \(String(goal))"
+    }
+    
+    func findAverage() -> Int {
+        var total = 0
+        for i in 0..<stepsPerDay.count-1 {
+            total = total + Int(stepsPerDay[i])
+        }
+        
+        return total/(stepsPerDay.count-1)
+    }
+    
+    func findMax() -> Int {
+        var max = 0
+        for i in 0..<stepsPerDay.count-1 {
+            if Int(stepsPerDay[i]) > max {
+                max = Int(stepsPerDay[i])
+            }
+        }
+        
+        return max
+    }
+    
+    
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
 //        let destinationVC = segue.destinationViewController as! ViewController
