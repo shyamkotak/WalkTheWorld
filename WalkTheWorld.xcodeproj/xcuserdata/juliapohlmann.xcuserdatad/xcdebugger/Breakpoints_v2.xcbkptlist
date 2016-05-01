@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WalkTheWorld/StepProgress.swift"
-            timestampString = "482688495.138309"
+            timestampString = "483805148.074187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "createStepProgressLayer()"
             landmarkType = "5">
          </BreakpointContent>

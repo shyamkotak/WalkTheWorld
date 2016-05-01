@@ -26,6 +26,8 @@ class StepProgress : UIView {
     func setTotalSteps(steps: Double) {
         totalSteps = Int(steps)
         stepLabel.text = "\(totalSteps) Steps"
+        self.stepLabel.textColor = incompleteColor
+        self.stepProgressLayer.strokeColor = incompleteColor.CGColor
     }
     
     func createStepProgressLayer() {

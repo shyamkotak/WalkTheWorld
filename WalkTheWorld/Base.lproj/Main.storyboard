@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="doe-98-uMV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="doe-98-uMV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -166,6 +166,7 @@
                         <outlet property="stepProgress4" destination="Xmf-Zv-wGO" id="gyH-wL-VgR"/>
                         <outlet property="stepProgress5" destination="vHo-nL-42h" id="iqa-Vt-S9m"/>
                         <segue destination="V3X-hx-Z97" kind="show" identifier="toChart" id="GBM-vT-dkb"/>
+                        <segue destination="A1p-Qp-nan" kind="show" identifier="toSettings" id="gb3-dk-HR4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -268,7 +269,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Walk the World" id="lzk-hr-CQg"/>
+                    <navigationItem key="navigationItem" title="Walk the World" id="lzk-hr-CQg">
+                        <barButtonItem key="leftBarButtonItem" id="iZc-Zr-DvC" userLabel="Settings"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="FunFact" destination="jiT-82-cfb" id="Qix-Lu-5It"/>
                         <outlet property="animatedImage" destination="w2t-gv-x6z" id="QyV-2V-ReO"/>
@@ -277,7 +280,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3Q-1o-tSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="481"/>
+            <point key="canvasLocation" x="299" y="539"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="9Jx-zg-v0d">
+            <objects>
+                <viewController id="A1p-Qp-nan" customClass="SettingsViewController" customModule="WalkTheWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D5P-h7-xH2"/>
+                        <viewControllerLayoutGuide type="bottom" id="IUp-P7-ie0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="156-gE-3Tc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Set your personal step goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyU-78-fXg">
+                                <rect key="frame" x="170" y="206" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asV-lR-oQs">
+                                <rect key="frame" x="264" y="271" width="51" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="buttonClick:" destination="A1p-Qp-nan" eventType="touchUpInside" id="ecF-B0-0Jg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Current step goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7L-7P-B1Q">
+                                <rect key="frame" x="150" y="177" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Walk the World Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXv-n1-aa8">
+                                <rect key="frame" x="208" y="132" width="184" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cg-si-n7i">
+                                <rect key="frame" x="236" y="235" width="129" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="asV-lR-oQs" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="03E-ON-j8o"/>
+                            <constraint firstItem="xyU-78-fXg" firstAttribute="top" secondItem="q7L-7P-B1Q" secondAttribute="bottom" constant="19" id="55y-1R-x8U"/>
+                            <constraint firstItem="xyU-78-fXg" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="IiE-gB-OUx"/>
+                            <constraint firstItem="0cg-si-n7i" firstAttribute="top" secondItem="xyU-78-fXg" secondAttribute="bottom" constant="8" id="PbR-MQ-HDh"/>
+                            <constraint firstItem="asV-lR-oQs" firstAttribute="top" secondItem="0cg-si-n7i" secondAttribute="bottom" constant="6" id="au7-kh-lgW"/>
+                            <constraint firstItem="q7L-7P-B1Q" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="bvR-tf-vLQ"/>
+                            <constraint firstItem="0cg-si-n7i" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="dbD-Qp-tTt"/>
+                            <constraint firstItem="XXv-n1-aa8" firstAttribute="centerX" secondItem="156-gE-3Tc" secondAttribute="centerX" id="mqE-gT-RfZ"/>
+                            <constraint firstItem="q7L-7P-B1Q" firstAttribute="top" secondItem="XXv-n1-aa8" secondAttribute="bottom" constant="24" id="pKl-Pu-u1M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentLabel" destination="q7L-7P-B1Q" id="6Js-f2-3Mj"/>
+                        <outlet property="inputSteps" destination="0cg-si-n7i" id="rJU-eA-7y9"/>
+                        <outlet property="promptLabel" destination="xyU-78-fXg" id="cJh-xR-4XK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1U6-Xh-wCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="1276"/>
         </scene>
     </scenes>
     <resources>

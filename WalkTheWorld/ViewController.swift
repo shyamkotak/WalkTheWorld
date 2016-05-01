@@ -11,6 +11,7 @@ import HealthKit
 import AVKit
 import AVFoundation
 import Charts
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -19,7 +20,6 @@ class ViewController: UIViewController {
     private let completeColor : UIColor = UIColor(red: 32/255, green: 178/255, blue: 112/255, alpha: 1)
     private let greyBarColor : UIColor = UIColor(red: 209/225, green: 209/255, blue: 209/225, alpha: 1)
 
-    
     @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var buttonImage1: UIButton!
@@ -39,27 +39,13 @@ class ViewController: UIViewController {
     var stepPercents : [Double] = [0, 0, 0, 0, 0]
     var places : [String] = ["Mountains_Water", "NYC", "MultipleLandscapes", "GoldenGateBridge", "CNTower"]
     var stepsPerDay : [Double] = []
+    var stepGoal : Int = 10000
     
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //set title
-        self.navigationItem.title = "Walk The World"
-
-        //remove back button
-        self.navigationItem.hidesBackButton = true
-        
-        //set charts button
-        let myBtn: UIButton = UIButton()
-        myBtn.setImage(UIImage(named: "bar-chart-7-xxl.png"), forState: .Normal)
-        myBtn.frame = CGRectMake(0, 0, 25, 25)
-        myBtn.addTarget(self, action: "segueToChart:", forControlEvents: .TouchUpInside)
-
-        //place button in top right
-        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(customView: myBtn), animated: true)
-
+    override func viewDidAppear(animated: Bool) {
+        findStepGoal()
+        setProgressCircleGoals()
+        print("Step Goal!\( stepGoal)")
         //grey out all videos
         buttonImage1.enabled = false
         buttonImage2.enabled = false
@@ -81,12 +67,98 @@ class ViewController: UIViewController {
         
         //show the users the # of steps they've taken
         self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
-        if Int(self.currentSteps) > 10000 {
+        if Int(self.currentSteps) > stepGoal {
             self.label.textColor = completeColor
         } else {
             self.label.textColor = incompleteColor
         }
     }
+    
+    func setProgressCircleGoals() {
+        print("stepGoal is \(stepGoal)")
+        totalSteps[0] = Double(stepGoal)
+        totalSteps[1] = totalSteps[0] - Double(stepGoal/5)
+        totalSteps[2] = totalSteps[1] - Double(stepGoal/5)
+        totalSteps[3] = totalSteps[2] - Double(stepGoal/5)
+        totalSteps[4] = totalSteps[3] - Double(stepGoal/5)
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //set title
+        self.navigationItem.title = "Walk The World"
+
+        //remove back button
+        self.navigationItem.hidesBackButton = true
+        
+        //set charts button
+        let chartsBtn: UIButton = UIButton()
+        chartsBtn.setImage(UIImage(named: "bar-chart-7-xxl.png"), forState: .Normal)
+        chartsBtn.frame = CGRectMake(0, 0, 25, 25)
+        chartsBtn.addTarget(self, action: "segueToChart:", forControlEvents: .TouchUpInside)
+
+        //place button in top right
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(customView: chartsBtn), animated: true)
+
+        
+        //set settings button
+        let settingsBtn: UIButton = UIButton()
+        settingsBtn.setImage(UIImage(named: "Button_Settings"), forState: .Normal)
+        settingsBtn.frame = CGRectMake(0, 0, 25, 25)
+        settingsBtn.addTarget(self, action: "segueToSettings:", forControlEvents: .TouchUpInside)
+        
+        //place button in top right
+        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(customView: settingsBtn), animated: true)
+//        findStepGoal()
+//        setProgressCircleGoals()
+//        
+//        //grey out all videos
+//        buttonImage1.enabled = false
+//        buttonImage2.enabled = false
+//        buttonImage3.enabled = false
+//        buttonImage4.enabled = false
+//        buttonImage5.enabled = false
+//        
+//        //make those cool bars
+//        setStepTotals()
+//        for index in 0 ... (totalSteps.count - 1) {
+//            var stepPercent = currentSteps / totalSteps[index]
+//            if stepPercent > 1.0 {
+//                stepPercent = 1.0
+//                enableButton(index+1)
+//            }
+//            stepPercents[index] = stepPercent
+//        }
+//        animateProgressCircles()
+//        
+//        //show the users the # of steps they've taken
+//        self.label.text = "Today's Steps: " + String(Int(self.currentSteps))
+//        if Int(self.currentSteps) > stepGoal {
+//            self.label.textColor = completeColor
+//        } else {
+//            self.label.textColor = incompleteColor
+//        }
+    }
+    
+    func findStepGoal() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let employeesFetch = NSFetchRequest(entityName: "StepGoal")
+
+        do {
+            let fetchedStepGoals = try managedContext.executeFetchRequest(employeesFetch) as! [NSManagedObject]
+            if fetchedStepGoals.count > 0 {
+                stepGoal = (fetchedStepGoals[0].valueForKey("numSteps") as? Int)!
+            } else {
+                stepGoal = 10000
+            }
+        } catch {
+            fatalError("Failed to fetch employees: \(error)")
+        }
+    }
+    
     
     func setStepTotals() {
         stepProgress1.setTotalSteps(totalSteps[0])
@@ -198,11 +270,20 @@ class ViewController: UIViewController {
         performSegueWithIdentifier("toChart", sender: sender)
     }
     
+    func segueToSettings(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("toSettings", sender: sender)
+    }
+    
     //we need to pass the array of steps every day
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        // Create a new variable to store the instance of PlayerTableViewController
-        let destinationVC = segue.destinationViewController as! ChartViewController
-        destinationVC.stepsPerDay = self.stepsPerDay
+        if segue.identifier == "toSettings" {
+            let destinationVC = segue.destinationViewController as! SettingsViewController
+            destinationVC.currentStepGoal = self.stepGoal
+        } else {
+            // Create a new variable to store the instance of ChartViewController
+            let destinationVC = segue.destinationViewController as! ChartViewController
+            destinationVC.stepsPerDay = self.stepsPerDay
+        }
     }
 
     override func didReceiveMemoryWarning() {
