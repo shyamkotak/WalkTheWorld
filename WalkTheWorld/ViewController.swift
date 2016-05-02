@@ -281,7 +281,6 @@ class ViewController: UIViewController {
             destinationVC.currentStepGoal = self.stepGoal
             destinationVC.stepsPerDay = self.stepsPerDay
         } else {
-            // Create a new variable to store the instance of ChartViewController
             let destinationVC = segue.destinationViewController as! ChartViewController
             destinationVC.stepsPerDay = self.stepsPerDay
             destinationVC.stepGoal = self.stepGoal

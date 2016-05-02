@@ -45,7 +45,6 @@ class LoadViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "ToMainView" {
-            //need to pass information from the queries
             let destinationVC = segue.destinationViewController as! ViewController
             destinationVC.currentSteps = self.currentSteps
             destinationVC.stepsPerDay = self.stepsPerDay
