@@ -1,4 +1,4 @@
-# WalkTheWorld
+# iOS Lifestyle App
 
 Walk The World is a lifestyle app that motivates you to reach your step goal by
 rewarding you with hyperlapse experiences from some of the most desirable travel destinations!
